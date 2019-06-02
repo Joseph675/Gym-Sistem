@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Editar Asistencias</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+    <h1>{{asis.cita}}</h1> 
+
+
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-10">
+                   
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="zwicon-calendar-never"></i></span>
+                        </div>
+                        <input type="text" class="form-control date-picker" placeholder="Pick a date & time" ng-model="asis.cita">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="modal-footer">
+
+    <button class="btn btn-info" type="button" ng-click="ok(asis)">Aceptar</button>
+    <button class="btn btn-danger" type="button"  ng-click="eliminarasistencias(asis)">Eliminar</button>
+     <button class="btn btn-light" type="button" ng-click="cancel(asis)">Cancelar</button>
+</div>
+
+<script src="resources/js/app.min.js"></script>

@@ -1,0 +1,27 @@
+
+
+
+
+<a ui-sref="panel">IR A PANEL</a>
+<br>
+
+
+
+
+<table class="table table-striped" >
+	<tr >
+		<td>Nombre</td>
+		<td>Asistencia</td>
+	</tr>
+	
+	<tr  ng-repeat="usua in usuarios" > 
+		<td>{{usua.nombre}}</td>
+		<td> 
+			<button ng-repeat="asi in usu.asistencia" 
+			>{{asi.fecha}}</button>
+			<button ng-click="mas(usua)" class="btn btn-info">+</button>
+		</td>
+	</tr>
+	
+</table>
+
