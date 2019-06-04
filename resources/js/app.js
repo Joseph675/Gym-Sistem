@@ -12,7 +12,7 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 	
 	.state('login', {
 		url: '/login',
-		controller: 'PanelCtrl',
+		controller: 'loginCtrl',
 		templateUrl: 'templates/login.html'
 	})
 

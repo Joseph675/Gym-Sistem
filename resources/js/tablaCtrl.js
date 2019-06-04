@@ -12,6 +12,7 @@ angular.module('todo')
 		$scope.editar=true;
 		$scope.modificando = true ;
 		$scope.usuarios_edit = usuario;
+		
 		console.log('vamos a editar');
 	}
 
@@ -44,6 +45,7 @@ angular.module('todo')
 			
 		consulta = 'UPDATE usuarios SET nombres=?, apellidos=?, email=?, sexo=?, fecha=?, celular=?, modificado=?, username=?, password=? WHERE rowid=?'
 		ConexionServ.query(consulta, [usu.nombres, usu.apellidos, usu.email, usu.sexo, usu.fecha, usu.celular, usu.modificado,  usu.username, usu.password, usu.rowid]).then(function(result){
+			toastr.info('Usuario Actualizado')
 			console.log('usuarios actualizado ', result);
 		}, function(tx){
 			console.log('usuarios no se pudo actualizar', tx);
@@ -56,8 +58,8 @@ angular.module('todo')
 		ConexionServ.query(consulta, [usuario.rowid]).then(function(result){
 			$scope.usuario = result;
 			$scope.mostrarusuarios();
-			console.log('usuario eliminada')
-
+			console.log('usuario eliminado')
+			toastr.error('Usuario eliminada')
 		}, function(tx){
 			console.log('usuario no se pudo eliminar', tx)
 		});

@@ -23,128 +23,42 @@
                 <li class="d-xl-none"><a data-sa-action="search-open"><i class="zwicon-search"></i></a></li>
 
                 <li class="dropdown">
-                    <a  data-toggle="dropdown" class="top-nav"><i class="zwicon-mail"></i></a>
+                    <a  data-toggle="dropdown" class="top-nav"><i class="zwicon-task"></i></a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
                         <div class="dropdown-header">
-                            Messages
-
+                           Tareas
                             <div class="actions">
-                                <a href="messages.html" class="actions__item zwicon-plus"></a>
+                                <a ui-sref="tareas" class="actions__item zwicon-plus"></a>
                             </div>
                         </div>
 
-                        <div class="listview listview--hover">
-                            <a  class="listview__item">
-                                <img src="demo/img/profile-pics/1.jpg" class="avatar-img" alt="">
-
-                                <div class="listview__content">
-                                    <div class="listview__heading">
-                                        David Belle <small>12:01 PM</small>
-                                    </div>
-                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                        <div  class="listview listview--hover ">
+                           
+                               <a class="listview listview--hover "> 
+                                    
+                                <div ng-repeat="asd in asdasd" class=" icons-demo__item listview__content ">
+                                  
+                                        <i class="zwicon-chevron-right">
+                                                <span>sad</span>
+                                        </i>
+                                     
+                                   
                                 </div>
+
+                               
+                                
+                                
                             </a>
 
                             
 
-                            <a  class="view-more">View all messages</a>
+                            <a  ui-sref="tareas" class="view-more">Ver todas las tareas</a>
+
                         </div>
                     </div>
+
                 </li>
 
-                <li class="dropdown top-nav__notifications">
-                    <a  data-toggle="dropdown" class="top-nav">
-                        <i class="zwicon-bell"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu--block">
-                        <div class="dropdown-header">
-                            Notifications
-
-                            <div class="actions">
-                                <a  class="actions__item zwicon-checkmark-square" data-sa-action="notifications-clear"></a>
-                            </div>
-                        </div>
-
-                        <div class="listview listview--hover">
-                            <div class="listview__scroll scrollbar">
-                                <a  class="listview__item">
-                                    <img src="demo/img/profile-pics/1.jpg" class="avatar-img" alt="">
-
-                                    <div class="listview__content">
-                                        <div class="listview__heading">David Belle</div>
-                                        <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
-                                    </div>
-                                </a>
-
-                                
-                            </div>
-
-                            <div class="p-1"></div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="dropdown d-none d-sm-inline-block">
-                    <a  data-toggle="dropdown"><i class="zwicon-checkmark-circle"></i></a>
-
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu--block" role="menu">
-                        <div class="dropdown-header">Tasks</div>
-
-                        <div class="listview listview--hover">
-                            <a  class="listview__item">
-                                <div class="listview__content">
-                                    <div class="listview__heading">HTML5 Validation Report</div>
-
-                                    <div class="progress mt-1">
-                                        <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a class="listview__item">
-                                <div class="listview__content">
-                                    <div class="listview__heading">Google Chrome Extension</div>
-
-                                    <div class="progress mt-1">
-                                        <div class="progress-bar bg-warning" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a class="listview__item">
-                                <div class="listview__content">
-                                    <div class="listview__heading">Social Intranet Projects</div>
-
-                                    <div class="progress mt-1">
-                                        <div class="progress-bar bg-success" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a  class="listview__item">
-                                <div class="listview__content">
-                                    <div class="listview__heading">Bootstrap Admin Template</div>
-
-                                    <div class="progress mt-1">
-                                        <div class="progress-bar bg-info" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a  class="listview__item">
-                                <div class="listview__content">
-                                    <div class="listview__heading">Youtube Client App</div>
-
-                                    <div class="progress mt-1">
-                                        <div class="progress-bar bg-danger" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a class="view-more">View all Tasks</a>
-                        </div>
-                    </div>
-                </li>
 
                 <li class="dropdown d-none d-sm-inline-block">
                     <a  data-toggle="dropdown"><i class="zwicon-grid"></i></a>
@@ -206,7 +120,7 @@
         <aside class="sidebar ">
             <div class="scrollbar">
                 <div class="user">
-                    <div class="user__info" data-toggle="dropdown">
+                    <div class=" user__info" data-toggle="dropdown">
                         <img class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
                         <div>
                                 <div class="user__name">Mariana,Valentina y Kevin</div>
@@ -222,11 +136,11 @@
                 </div>
 
                 <ul class="navigation">
-                    <li class="navigation__active"><a ui-sref="panel"><i class="zwicon-home"></i> Home</a></li>
+                    <li ><a ui-sref="panel"><i class="zwicon-home"></i> Home</a></li>
 
                     <li ><a ui-sref="usuarios"><i class="zwicon-user"></i> Usuarios</a></li>
             
-                    <li ><a ui-sref="asistencias"><i class="zwicon-smile"></i> Asistencias</a></li>
+                    <li class="navigation__active"><a ui-sref="asistencias"><i class="zwicon-smile"></i> Asistencias</a></li>
 
                     <li ><a ui-sref="table"><i i class="zwicon-layout-2"></i> Tabla</a></li>
 
@@ -286,18 +200,18 @@
                                     <table class="table table-hover">
                                         <thead>
                                         <tr>
-                                            <th class="text-light">#</th>
-                                            <th class="text-light">Nombre</th>
-                                            <th class="text-light">Apellido</th>
-                                            <th class="text-light">Asistencia</th>
+                                            <th>#</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Asistencia</th>
                                            
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr ng-repeat="usu in usuarios">
-                                            <th  class="text-light">{{$index+1}}</th>
-                                            <td class="text-light">{{usu.nombres}}</td>
-                                            <td class="text-light">{{usu.apellidos}}</td>
+                                            <th  >{{$index+1}}</th>
+                                            <td >{{usu.nombres}}</td>
+                                            <td >{{usu.apellidos}}</td>
                                             
                                             <td>
                                                 <div >
