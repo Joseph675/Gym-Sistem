@@ -35,11 +35,10 @@ angular.module('todo')
 		
 		consulta = "INSERT INTO asistencias('cita', 'usuarios_id') VALUES(?,?)"
 		
-			formatMMDDYYYY=new Date()
 			$scope.cita= new Date(startDate)
 		ConexionServ.query(consulta, [$scope.cita, usu.rowid ]).then(function(result){
 			
-			
+			 toastr.sadasd('Asistencia insertata') 
 			console.log('asistencias insertado')
 			$scope.traerusuarios();
 		}, function(tx){

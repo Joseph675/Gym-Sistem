@@ -23,20 +23,16 @@ angular.module('todo')
 			var fecha = document.getElementById("fecha");
 			var celular = document.getElementById("celular");
 			var usuario = document.getElementById("usuario");
-			var contraseña = document.getElementById("contraseña");
-
-		
-			
-			
-		
+			var contraseña = document.getElementById("contraseña");	
+			var radio1 = document.getElementById("f");	
+			var radio2 = document.getElementById("m");		
 	
-			if(username.value ==""   || password.value =="" || correo.value =="" || fecha.value =="" || celular.value =="" || usuario.value =="" || contraseña.value =="" ){
+			if(username.value ==""   || password.value =="" || correo.value =="" || fecha.value =="" || celular.value =="" || usuario.value =="" || contraseña.value =="" || radio1.value =="" || radio2.value =="" ){
 				toastr.warning('Completa todos los campos')
 			}else{
 				
 				consulta = "INSERT INTO usuarios('nombres', 'apellidos', 'email', 'sexo', 'fecha', 'celular', 'modificado', 'username', 'password') VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)"
 			ConexionServ.query(consulta, [$scope.nombres, $scope.apellidos, $scope.email, $scope.sexo, $scope.fecha, $scope.celular, $scope.modificado, $scope.username, $scope.password]).then(function(result){
-				$scope.mostrarusuarios();
 				toastr.info('Usuario insertado')
 				console.log('USUARIO insertado')
 			}, function(tx){
