@@ -22,14 +22,14 @@
         
                         <div class="login__block__body">
                             <div class="form-group">
-                                <input type="text" class="form-control text-center" placeholder="Email Address" id="nombres">
+                                <input type="text" class="form-control text-center" placeholder="Email Address" ng-model="username">
                             </div>
         
                             <div class="form-group">
-                                <input type="password" class="form-control text-center" placeholder="Password" id="contraseña">
+                                <input type="password" class="form-control text-center" placeholder="Password"  ng-model="password">
                             </div>
                             
-                            <button ui-sref="panel" type="submit" class="btn btn-theme btn--icon"><i class="zwicon-checkmark"></i></button>
+                            <button ng-click="mostrarusuarios(username , password)" type="submit" class="btn btn-theme btn--icon"><i class="zwicon-checkmark"></i></button>
                             
                         </div>
                     </div>
