@@ -8,6 +8,29 @@ angular.module('todo')
 
 
 	
+
+	$scope.insertarusuarios = function (){
+		
+			 $scope.nombres
+			 $scope.username
+			 $scope.password	
+	
+			if($scope.nombres ==""  ||  $scope.username =="" || $scope.password =="" ){
+				toastr.warning('Completa todos los campos')
+			}else{
+			
+			consulta = "INSERT INTO usuarios('nombres', 'apellidos', 'email', 'sexo', 'fecha', 'celular', 'modificado', 'username', 'password') VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)"
+		ConexionServ.query(consulta, [$scope.nombres, $scope.apellidos, $scope.email, $scope.sexo, $scope.fecha, $scope.celular, $scope.modificado, $scope.username, $scope.password]).then(function(result){
+			toastr.info('Usuario insertado')
+			console.log('USUARIO insertado')
+		}, function(tx){
+			toastr.info('usuario no se pudo insertar')
+			console.log('usuarios no se pudo insertar', tx)
+		});
+	}
+		
+
+}
 	
 
 	$scope.mostrarusuarios = function(username, password){
@@ -16,7 +39,7 @@ angular.module('todo')
 				if(result.length > 0){
 					$state.go("panel");
 					toastr.info('Bienvenido ' + username)
-				}else{
+			}else{
 					toastr.warning('Usuario incorrecto')
 				}
 		})
