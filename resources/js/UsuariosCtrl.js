@@ -31,21 +31,7 @@ angular.module('todo')
 	}
 
 
-	$scope.insertarasistencia = function(usu){
-		
-		consulta = "INSERT INTO asistencias('cita', 'usuarios_id') VALUES(?,?)"
-		
-			$scope.cita= new Date(startDate)
-		ConexionServ.query(consulta, [$scope.cita, usu.rowid ]).then(function(result){
-			
-			 toastr.sadasd('Asistencia insertata') 
-			console.log('asistencias insertado')
-			$scope.traerusuarios();
-		}, function(tx){
-			console.log('asistencias no se pudo insertar', tx)
-		});
-	}
-
+	
 	$scope.insertarasistencia = function(usu){
 		
 		consulta = "INSERT INTO asistencias('cita', 'usuarios_id') VALUES(?,?)"
