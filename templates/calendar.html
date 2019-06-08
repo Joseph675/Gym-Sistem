@@ -1,7 +1,12 @@
-<main class="main">
-        
+        <link rel="stylesheet" href="resources/vendors/zwicon/zwicon.min.css">
+        <link rel="stylesheet" href="resources/vendors/animate.css/animate.min.css">
+        <link rel="stylesheet" href="resources/vendors/overlay-scrollbars/OverlayScrollbars.min.css">
+        <link rel="stylesheet" href="resources/vendors/fullcalendar/core/main.min.css">
 
-        <header class="header">
+        <!-- App styles -->
+        <link rel="stylesheet" href="resources/css/app.min.css">
+
+<header class="header">
                 <div class="navigation-trigger d-xl-none" data-sa-action="aside-open" data-sa-target=".sidebar">
                     <i class="zwicon-hamburger-menu"></i>
                 </div>
@@ -116,6 +121,79 @@
                 </div>
             </header>
 
+        <aside class="sidebar ">
+            <div class="scrollbar">
+                <div class="user">
+                    <div class="user__info" data-toggle="dropdown">
+                        <img class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
+                        <div>
+                                <div class="user__name">Mariana,Valentina y Kevin</div>
+                                <div class="user__email">marianavalentinakevin@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-menu dropdown-menu--invert shows">
+                        <a ui-sref="perfil" class="dropdown-item">Ver Perfil</a>
+                        <a class="dropdown-item" >Settings</a>
+                        <a ui-sref="login" class="dropdown-item" >Salir</a>
+                    </div>
+                </div>
+
+                <ul class="navigation">
+                    <li class="navigation__active"><a ui-sref="panel"><i class="zwicon-home"></i> Home</a></li>
+
+                    <li ><a ui-sref="usuarios"><i class="zwicon-user"></i> Usuarios</a></li>
+            
+                    <li ><a ui-sref="asistencias"><i class="zwicon-smile"></i> Asistencias</a></li>
+
+                    <li ><a ui-sref="table"><i i class="zwicon-layout-2"></i> Tabla</a></li>
+
+                    <li ><a ui-sref="form"><i i class="zwicon-user-plus"></i> Formulario</a></li>
+
+                    <li ><a ui-sref="calendar"><i i class="zwicon-calendar-month"></i> Calendario</a></li>
+                   
+
+                    
+
+                    
+                </ul>
+            </div>
+        </aside>
+        <div class="themes">
+            <div class="scrollbar">
+                <a  class="themes__item" data-sa-value="1"><img src="resources/img/bg/1.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="2"><img src="resources/img/bg/2.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="3"><img src="resources/img/bg/3.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="4"><img src="resources/img/bg/4.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="5"><img src="resources/img/bg/5.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="6"><img src="resources/img/bg/6.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="7"><img src="resources/img/bg/7.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="8"><img src="resources/img/bg/8.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="9"><img src="resources/img/bg/9.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="10"><img src="resources/img/bg/10.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="11"><img src="resources/img/bg/11.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="12"><img src="resources/img/bg/12.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="13"><img src="resources/img/bg/13.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="14"><img src="resources/img/bg/14.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="15"><img src="resources/img/bg/15.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="16"><img src="resources/img/bg/16.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="17"><img src="resources/img/bg/17.jpg" alt=""></a>
+                
+            </div>
+        </div>
+
+               <section class="content">
+                <div class="content__inner">
+                    <header class="content__title content__title--calendar">
+                        <h1><span id="calendar-title">Calendar</span> <small>FullCalendar is a highly customizable open source javaScript event calendar.</small></h1>
+
+                        <div class="actions actions--calendar">
+                            <a href="" data-toggle="tooltip" title="Previous" class="actions__item" data-calendar-view="prev"><i class="zwicon-arrow-square-left"></i></a>
+                            <a href="" data-toggle="tooltip" title="Today" class="actions__item" data-calendar-view="today"><i class="zwicon-arrow-square-down"></i></a>
+                            <a href="" data-toggle="tooltip" title="Next" class="actions__item" data-calendar-view="next"><i class="zwicon-arrow-square-right"></i></a>
+                        </div>
+                    </header>
+
                     <div id="calendar" class="calendar card"></div>
 
                     <!-- Add new event -->
@@ -170,15 +248,17 @@
                     <p>© Super Admin Responsive. All rights reserved.</p>
 
                     <ul class="footer__nav">
-                        <a href="#">Homepage</a>
-                        <a href="#">Company</a>
-                        <a href="#">Support</a>
-                        <a href="#">News</a>
-                        <a href="#">Contacts</a>
+                        <a href="">Homepage</a>
+                        <a href="">Company</a>
+                        <a href="">Support</a>
+                        <a href="">News</a>
+                        <a href="">Contacts</a>
                     </ul>
                 </footer>
             </section>
-        </main>
+                    
+         
+      
 
 
         

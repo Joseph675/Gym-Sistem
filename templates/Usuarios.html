@@ -1,7 +1,5 @@
-<link rel="stylesheet" href="css/toastr.css">
 
 
-<main class="main">
         
         <header class="header">
                 <div class="navigation-trigger d-xl-none" data-sa-action="aside-open" data-sa-target=".sidebar">
@@ -157,66 +155,82 @@
         </div>
     </aside>
     <div class="themes">
-        <div class="scrollbar">
-            <a  class="themes__item" data-sa-value="1"><img src="resources/img/bg/1.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="2"><img src="resources/img/bg/2.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="3"><img src="resources/img/bg/3.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="4"><img src="resources/img/bg/4.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="5"><img src="resources/img/bg/5.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="6"><img src="resources/img/bg/6.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="7"><img src="resources/img/bg/7.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="8"><img src="resources/img/bg/8.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="9"><img src="resources/img/bg/9.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="10"><img src="resources/img/bg/10.jpg" alt=""></a>
-            <a  class="themes__item" data-sa-value="11"><img src="resources/img/bg/11.jpg" alt=""></a>
+            <div class="scrollbar">
+                <a  class="themes__item" data-sa-value="1"><img src="resources/img/bg/1.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="2"><img src="resources/img/bg/2.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="3"><img src="resources/img/bg/3.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="4"><img src="resources/img/bg/4.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="5"><img src="resources/img/bg/5.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="6"><img src="resources/img/bg/6.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="7"><img src="resources/img/bg/7.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="8"><img src="resources/img/bg/8.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="9"><img src="resources/img/bg/9.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="10"><img src="resources/img/bg/10.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="11"><img src="resources/img/bg/11.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="12"><img src="resources/img/bg/12.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="13"><img src="resources/img/bg/13.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="14"><img src="resources/img/bg/14.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="15"><img src="resources/img/bg/15.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="16"><img src="resources/img/bg/16.jpg" alt=""></a>
+                <a  class="themes__item" data-sa-value="17"><img src="resources/img/bg/17.jpg" alt=""></a>
+                
+            </div>
         </div>
-    </div>
+        
           <section class="content">
-              <div class="content__inner">
-                  <header class="content__title">
-                      
-
-                      <div class="actions">
-                          <a href="#" class="actions__item zmdi zmdi-trending-up"></a>
-                          <a href="#" class="actions__item zmdi zmdi-check-all"></a>
-
-                          <div class="dropdown actions__item">
-                              <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
-                              <div class="dropdown-menu dropdown-menu-right">
-                                  <a href="#" class="dropdown-item">Refresh</a>
-                                  <a href="#" class="dropdown-item">Manage Widgets</a>
-                                  <a href="#" class="dropdown-item">Settings</a>
-                              </div>
-                          </div>
-                      </div>
-                  </header>
+             
 
                 
                   <div class="card">
-                        <div class="card-body">
-                <table class="table table-bordered" >
+                    <div class="card-body">
+                     <table class="table table-bordered mb-0" >
                         <thead>
-                          <tr>
-                            <th><h5>#</h5></th>
-                            <th class="col-sm-6"><h5>Nombre</h5> </th>
-                            <th><h5>Apellido</h5> </th>
-                            <th><h5>Telefono</h5> </th>
-                          </tr>
+                               <tr>
+                                <th><h5>#</h5></th>
+                                <th><h5>Nombre</h5> </th>
+                                <th><h5>Apellido</h5> </th>
+                                <th><h5>Telefono</h5> </th>
+                              </tr>
                         </thead>
                         <tbody>
-                          <tr ng-repeat="usu in usuarios">
-                            <th scope="row">{{$index+1}}</th>
-                            <td>{{usu.nombres}}</td>
-                            <td>{{usu.apellidos}}</td>
-                            <td>{{usu.celular}}</td>
-                          </tr>
+                              <tr ng-repeat="usu in usuarios">
+                               <th>#{{$index+1}}</th>
+                               <td>{{usu.nombres}}</td>
+                                <td>{{usu.apellidos}}</td>
+                                <td>{{usu.celular}}</td>
+                             </tr>
                           
                         </tbody>
-                </table>
-                        </div>
+                      </table>
+                  </div>
                 </div>
 
+<div class="container">
+        
+<!--        <button id="btn0">alert</button>-->
+        
+        <div class="row">
+        <div class="col-lg-3">
+            <button id="btn1" class="btn btn-outline-primary btn-lg btn-block">Básico</button>
+            <button id="btn2" class="btn btn-outline-secondary btn-lg btn-block">Tipos de popup</button>      
+        </div>
 
+        <div class="col-lg-3">
+            <button id="btn3" class="btn btn-outline-success btn-lg btn-block">Con Imagen</button>
+            <button id="btn4" class="btn btn-outline-danger btn-lg btn-block">Con Posición</button>      
+        </div>
+
+        <div class="col-lg-3">
+            <button id="btn5" class="btn btn-success btn-lg btn-block">Animada</button>
+            <button id="btn6" class="btn btn-primary btn-lg btn-block">Cambiando el fondo</button>      
+        </div>
+
+        <div class="col-lg-3">
+            <button id="btn7" class="btn btn-info btn-lg btn-block">Progresivo</button>
+            <button id="btn8" class="btn btn-danger btn-lg btn-block">Timer</button>      
+        </div>
+        </div>
+    </div>
             
             </div>
                   <footer class="footer hidden-xs-down">
