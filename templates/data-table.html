@@ -1,11 +1,5 @@
 
-        <div class="page-loader">
-                <div class="page-loader__spinner">
-                    <svg viewBox="25 25 50 50">
-                        <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-                    </svg>
-                </div>
-            </div>
+       
         <header class="header">
                 <div class="navigation-trigger d-xl-none" data-sa-action="aside-open" data-sa-target=".sidebar">
                     <i class="zwicon-hamburger-menu"></i>
@@ -190,10 +184,11 @@
                         <div class="card">
                             <div class="card-body">
                                 
-                                <div class="table-responsive ">
-                                    <table class="table table-hover">
+                                <div class="table-responsive data-table ">
+                                    <table id="data-table" class="table">
                                         <thead>
                                             <tr>
+                                                    <th><h5>#</h5></th>
                                                 <th><h5>Nombre</h5></th>
                                                 <th><h5>Apellido</h5></th>
                                                 <th><h5>Email</h5></th>
@@ -209,7 +204,7 @@
                                         </thead>
                                         <tbody>
                                             <tr ng-repeat="usuario in usuarios">
-                                                
+                                                    <td >{{$index+1}}</td>
                                                 <td >{{usuario.nombres}}</td>
                                                 <td>{{usuario.apellidos}}</td>
                                                 <td>{{usuario.email}}</td>
@@ -223,7 +218,7 @@
                                                         <button class=" btn btn-theme btn--icon"  data-toggle="modal" data-target="#modal-default"><i ng-click="editarusuarios(usuario)" class="zwicon-edit-circle"></i></button>
                                                 </td>
                                                 <td>
-                                                        <button class="btn btn-theme btn--icon" ng-click="eliminarusuarios(usuario)" ><i class="zwicon-user-delete" ></i></button>
+                                                        <button class="btn btn-theme btn--icon" ng-click="Swal(usuario)" ><i class="zwicon-user-delete" ></i></button>
                                                         
                                                 </td>
                                                 
@@ -305,23 +300,13 @@
             </div>
         </div>
 
-   <div class="btn-demo">
-                                <button class="btn btn-theme btn-sa-types" data-type="Success">Success</button>
-
-                                <button class="btn btn-theme btn-sa-types" data-type="Error">Error</button>
-
-                                <button class="btn btn-theme btn-sa-types" data-type="Warning">Warning</button>
-
-                                <button class="btn btn-theme btn-sa-types" data-type="Info">Info</button>
-
-                                <button class="btn btn-theme btn-sa-types" data-type="Question">Question</button>
-                            </div>
+  
  
       
 
         
 
         <!-- App functions and actions -->
-        <
+        
         <script src="resources/js/app.min.js"></script>
         <script src="demo/js/demo.js"></script>

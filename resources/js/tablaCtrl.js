@@ -16,6 +16,39 @@ angular.module('todo')
 		console.log('vamos a editar');
 	}
 
+	$scope.Swal = function(usuario){
+
+		
+		Swal.fire({
+			background: '#000',
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#17a2b8',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
+		  }).then((result) => {
+			if (result.value) {
+				consulta = 'DELETE FROM usuarios WHERE rowid=?'
+				ConexionServ.query(consulta, [usuario.rowid]).then(function(result){
+				$scope.usuario = result;
+				console.log('usuario eliminada')
+				$scope.mostrarusuarios();
+			}, function(tx){
+				console.log('usuario no se pudo eliminar', tx)
+			});
+				
+			  Swal.fire({
+				background: '#000',
+				title: 'Are you sure?',
+				text: "You won't be able to revert this!",
+				type: 'success',
+			  })
+			}
+		  })
+	}
+
 	$scope.insertarusuarios = function(){
 		consulta = "INSERT INTO usuarios('nombres', 'apellidos', 'email', 'sexo', 'fecha',  'celular', 'modificado', 'username', 'password') VALUES(?, ?, ?, ?, ?, ?, ?,  ?, ?, ?)"
 		ConexionServ.query(consulta, [$scope.nombres, $scope.apellidos, $scope.email, $scope.sexo, $scope.fecha, $scope.celular, $scope.modificado, $scope.username, $scope.password]).then(function(result){

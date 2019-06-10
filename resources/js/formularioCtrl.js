@@ -6,7 +6,7 @@ angular.module('todo')
 	$scope.editar = false ;	
 	$scope.modificando = false ;	
 
-
+	
 	
 
 	$scope.editarusuarios = function(usuario){
