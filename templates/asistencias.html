@@ -135,7 +135,6 @@
             <ul class="navigation">
                 <li ><a ui-sref="panel"><i class="zwicon-home"></i> Home</a></li>
 
-                <li ><a ui-sref="usuarios"><i class="zwicon-user"></i> Usuarios</a></li>
         
                 <li class="navigation__active"><a ui-sref="asistencias"><i class="zwicon-smile"></i> Asistencias</a></li>
 
@@ -178,18 +177,18 @@
                     
           <section class="content">
 
-              <div class="card">
+              <div class="card d-print-none">
                             <div class="card-body">
-                                <h4 class="card-title">Asistencias</h4>
+                                <h4 class="card-title ">Asistencias</h4>
         
                                 <div >
                                     <table class="table table-bordered">
                                         <thead>
                                         <tr>
-                                            <th><h5>#</h5></th>
-                                            <th><h5>Nombre</h5></th>
-                                            <th><h5>Apellido</h5>  </th>
-                                            <th><h5>Asistencia</h5></th>
+                                            <th style="width: 10px">#</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos  </th>
+                                            <th>Asistencia</th>
                                            
                                         </tr>
                                         </thead>
@@ -199,14 +198,54 @@
                                             <td >{{usu.nombres}}</td>
                                             <td >{{usu.apellidos}}</td>
                                             
-                                            <td>
+                                            <td >
                                                 <div >
                                             
-                                                <button data-type="success" ng-click="editarAsistencia(asi)"  ng-repeat="asi in usu.asistencias" class="btn btn--icon-text   btn-outline-theme-dark" ><i class="zwicon-calendar-day" ></i>{{asi.cita}}</button>
+                                                <button data-type="success" ng-click="editarAsistencia(asi)"  ng-repeat="asi in usu.asistencias" class="btn btn--icon-text   btn-outline-theme-dark " ><i class="zwicon-calendar-day" ></i>{{asi.cita}}</button>
 
-                                                 <button class=" btn btn-theme btn--icon btn-outline-theme" ng-click="insertarasistencia(usu)"> 
+                                                 <button class=" btn btn-theme btn--icon btn-outline-theme d-print-none" ng-click="insertarasistencia(usu)" > 
                                                     +
                                                  </button> 
+                                                </div>
+                                               
+                                            </td>
+                                        </tr>
+                                        
+                                        
+                                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card d-none d-print-block">
+                            <div class="card-body">
+                                <h4 class="card-title d-none">Asistencias</h4>
+        
+                                <div >
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos  </th>
+                                            <th>Asistencia</th>
+                                           
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="usu in usuarios">
+                                            <th >#{{$index+1}}</th>
+                                            <td >{{usu.nombres}}</td>
+                                            <td >{{usu.apellidos}}</td>
+                                            
+                                            <td >
+                                                <div >
+                                            
+                                                <button  ng-repeat="asi in usu.asistencias" class="btn btn--icon-text   btn-outline-theme-dark " ><i class="zwicon-calendar-day" ></i>{{asi.cita}}</button>
+
+                                                  
                                                 </div>
                                                
                                             </td>

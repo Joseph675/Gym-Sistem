@@ -136,7 +136,6 @@
             <ul class="navigation">
                 <li ><a ui-sref="panel"><i class="zwicon-home"></i> Home</a></li>
 
-                <li ><a ui-sref="usuarios"><i class="zwicon-user"></i> Usuarios</a></li>
         
                 <li ><a ui-sref="asistencias"><i class="zwicon-smile"></i> Asistencias</a></li>
 
@@ -178,7 +177,7 @@
 
     <section class="content">
 
-        <div class="content__inner">
+        <div class="content__inner d-print-none">
                 <h3>Tabla</h3>
                     
                         <div class="card">
@@ -188,7 +187,7 @@
                                     <table id="data-table" class="table">
                                         <thead>
                                             <tr>
-                                                    <th><h5>#</h5></th>
+                                                <th><h5>#</h5></th>
                                                 <th><h5>Nombre</h5></th>
                                                 <th><h5>Apellido</h5></th>
                                                 <th><h5>Email</h5></th>
@@ -235,22 +234,62 @@
     
                         
     
-                    <footer class="footer hidden-xs-down">
-                        <p>© Super Admin Responsive. All rights reserved.</p>
-    
-                        <ul class="nav footer__nav">
-                            <a class="nav-link">Homepage</a>
-    
-                            <a class="nav-link">Company</a>
-    
-                            <a class="nav-link">Support</a>
-    
-                            <a class="nav-link">News</a>
-    
-                            <a class="nav-link">Contacts</a>
-                        </ul>
-                    </footer>
+                   
         </div>
+
+        <div class="card d-none d-print-block">
+            <div class="card-body">
+             <table class="table table-bordered mb-0" >
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Sexo</th>
+                        <th>Fecha</th>
+                        <th>Celular</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="usuario in usuarios">
+                     <td >{{$index+1}}</td>
+                    <td >{{usuario.nombres}}</td>
+                    <td>{{usuario.apellidos}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td>{{usuario.sexo}}</td>
+                    <td>{{usuario.fecha}}</td>
+                    <td>{{usuario.celular}}</td>
+                    <td>{{usuario.username}}</td>
+                    <td >{{usuario.password}}</td>
+                
+                    
+                </tr>
+                  
+                </tbody>
+              </table>
+          </div>
+        </div>
+
+        <footer class="footer hidden-xs-down">
+            <p>© Super Admin Responsive. All rights reserved.</p>
+
+            <ul class="nav footer__nav">
+                <a class="nav-link">Homepage</a>
+
+                <a class="nav-link">Company</a>
+
+                <a class="nav-link">Support</a>
+
+                <a class="nav-link">News</a>
+
+                <a class="nav-link">Contacts</a>
+            </ul>
+        </footer>
+
     </section>
 
     <div class="modal fade" id="modal-default" tabindex="10">
