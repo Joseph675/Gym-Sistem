@@ -15,14 +15,15 @@ angular.module('todo')
                 "email varchar(200)  DEFAULT NULL collate nocase," +
                 "sexo varchar(100)  NOT NULL," +
                 "fecha varchar(100)  DEFAULT NULL collate nocase," +
-                "celular varchar(15)  NULL," +
-                "modificado varchar(100)  DEFAULT NULL collate nocase," +
+                "celular integer  NULL," +
+                "activo integer  DEFAULT  '1' NOT NULL," +
+                "imagen_id integer  NOT NULL,"+
                 "username varchar(100)  NOT NULL , " +
                 "password varchar(100)  NOT NULL)" ;
 
       sqlasistencias = "CREATE TABLE IF NOT EXISTS asistencias (id integer," +
                 "cita varchar(100)  DEFAULT NULL collate nocase, " +
-                "usuarios_id varchar(100)  NOT NULL)" ;
+                "usuarios_id integer  NOT NULL)" ;
 
    
 
