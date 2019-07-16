@@ -195,7 +195,7 @@
                                                 <th><h5>Fecha</h5></th>
                                                 <th><h5>Celular</h5></th>
                                                 <th><h5>Username</h5></th>
-                                                <th><h5>Password</h5></th>
+                                                <th><h5>Activo/No Activo</h5></th>
                                                 <th><h5>Editar</h5></th>
                                                 <th><h5>Eliminar</h5></th>
                                                 
@@ -203,7 +203,7 @@
                                         </thead>
                                         <tbody>
                                             <tr ng-repeat="usuario in usuarios">
-                                                    <td >{{$index+1}}</td>
+                                                <td >{{$index+1}}</td>
                                                 <td >{{usuario.nombres}}</td>
                                                 <td>{{usuario.apellidos}}</td>
                                                 <td>{{usuario.email}}</td>
@@ -211,7 +211,18 @@
                                                 <td>{{usuario.fecha}}</td>
                                                 <td>{{usuario.celular}}</td>
                                                 <td>{{usuario.username}}</td>
-                                                <td >{{usuario.password}}</td>
+                                                <td >
+
+                                                    <div class="col-sm-4 col-md-3">
+                                                        <div class="form-group">
+                                                            <div class="toggle-switch">
+                                                                <input type="checkbox"  ng-click="Actualizactivo(usuario)"  class="toggle-switch__checkbox" ng-true-value="1" ng-false-value="0" ng-model="usuario.modificado">
+                                                                <i class="toggle-switch__helper"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </td>
                                                 <td>
                                                        
                                                         <button class=" btn btn-theme btn--icon"  data-toggle="modal" data-target="#modal-default"><i ng-click="editarusuarios(usuario)" class="zwicon-edit-circle"></i></button>
@@ -264,7 +275,6 @@
                     <td>{{usuario.fecha}}</td>
                     <td>{{usuario.celular}}</td>
                     <td>{{usuario.username}}</td>
-                    <td >{{usuario.password}}</td>
                 
                     
                 </tr>

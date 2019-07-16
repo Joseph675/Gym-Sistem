@@ -59,11 +59,23 @@ angular.module('todo')
 		});
 	}
 
+	$scope.Actualizactivo = function(usuario){
+
+			
+		consulta = 'UPDATE usuarios SET modificado=?  WHERE rowid=?'
+		ConexionServ.query(consulta, [ usuario.modificado, usuario.rowid]).then(function(result){
+			console.log('activo actualizado ', result);
+		}, function(tx){
+			console.log('activo no se pudo actualizar', tx);
+		});
+
+}
+
 	$scope.mostrarusuarios = function(result){
 		consulta = "SELECT *, rowid FROM usuarios"
 		ConexionServ.query(consulta, []).then(function(result){
 			$scope.usuarios = result;
-			console.log('usuario mostrado')
+			console.log('usuario mostrado', result)
 
 		}, function(tx){
 			console.log('usuarios no mostrado', tx)
