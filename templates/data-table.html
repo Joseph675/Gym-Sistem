@@ -201,8 +201,8 @@
                                     <table id="searchTextResults" class="table">
                                             <div class="active-purple-4 mb-4">
                                                     <input class="form-control" type="text" placeholder="Buscar Usuario" aria-label="Search" ng-model="buscarusuario">
-                                                  </div>
-                                                  <label>Equality <input type="checkbox" ng-model="strict"></label><br>
+                                             </div>
+                                            <label>Activos<input type="checkbox"  ng-model="buscarusuario.activo"></label><br>
                                         <thead>
                                             
                                             <tr>
@@ -221,7 +221,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-repeat="usuario in usuarios | filter:buscarusuario">
+                                            <tr ng-repeat="usuario in usuarios | filter:buscarusuario:activo">
                                                 <td >{{$index+1}}</td>
                                                 <td >{{usuario.nombres}}</td>
                                                 <td>{{usuario.apellidos}}</td>

@@ -59,6 +59,19 @@ angular.module('todo')
 		});
 	}
 
+	$scope.activo = function(){
+		consulta = "SELECT *, activo=1 FROM usuarios"
+		ConexionServ.query(consulta, []).then(function(result){
+			$scope.usuarios = result;
+			console.log('activo mostrado')
+
+		}, function(tx){
+			console.log('activo no mostrado', tx)
+		});
+	}
+
+	$scope.activo();
+
 	$scope.Actualizactivo = function(usuario){
 
 			
