@@ -195,28 +195,40 @@
                     </header>
                         <div class="card">
                             <div class="card-body">
-                                
+
                                 <div class="table-responsive data-table ">
                                     
-                                    <table id="searchTextResults" class="table">
-                                            <div class="active-purple-4 mb-4">
-                                                    <input class="form-control" type="text" placeholder="Buscar Usuario" aria-label="Search" ng-model="buscarusuario">
-                                             </div>
-                                            <label>Activos<input type="checkbox"  ng-model="buscarusuario.activo"></label><br>
+                                    <table id="searchObjResults" class="table">
+                                            <div >
+                                                    
+                                                <input class="form-control" type="text" placeholder="Buscar Usuario" aria-label="Search" ng-model="buscarusuario">
+                                                  <br>
+                                                    <div class="form-group">
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input | active" ng-click="traeractivos(activo)"  ng-model="activo" value="1">
+                                                            <label class="custom-control-label"   for="customRadio1">Activos</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio mb-2">
+                                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" ng-click="traeractivos(activo)"  ng-model="activo" value="0">
+                                                            <label class="custom-control-label"   for="customRadio2">No activos</label>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            
                                         <thead>
                                             
                                             <tr>
-                                                <th><h5>#</h5></th>
-                                                <th><h5>Nombre</h5></th>
-                                                <th><h5>Apellido</h5></th>
-                                                <th><h5>Email</h5></th>
-                                                <th><h5>Sexo</h5></th>
-                                                <th><h5>Fecha</h5></th>
-                                                <th><h5>Celular</h5></th>
-                                                <th><h5>Username</h5></th>
-                                                <th><h5>Activo/No Activo</h5></th>
-                                                <th><h5>Editar</h5></th>
-                                                <th><h5>Eliminar</h5></th>
+                                                <th>#</th>
+                                                <th>Nombre</th>
+                                                <th>Apellido</th>
+                                                <th>Email</th>
+                                                <th><i class="fa fa-venus-mars" style="font-size:24px"></i></th>
+                                                <th>Fecha</th>
+                                                <th>Celular</th>
+                                                <th>Username</th>
+                                                <th>Activo/No Activo</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
                                                 
                                             </tr>
                                         </thead>

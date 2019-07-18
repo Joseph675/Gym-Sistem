@@ -21,13 +21,13 @@ angular.module('todo')
 		
 		Swal.fire({
 			background: '#000',
-			title: 'Are you sure?',
-			text: "You won't be able to revert this!",
+			title: '¿Estás seguro?',
+			text: "No te será permitido revertir esto",
 			type: 'warning',
 			showCancelButton: true,
 			confirmButtonColor: '#17a2b8',
 			cancelButtonColor: '#d33',
-			confirmButtonText: 'Yes, delete it!'
+			confirmButtonText: 'Confirmar'
 		  }).then((result) => {
 			if (result.value) {
 				consulta = 'DELETE FROM usuarios WHERE rowid=?'
@@ -41,8 +41,7 @@ angular.module('todo')
 				
 			  Swal.fire({
 				background: '#000',
-				title: 'Are you sure?',
-				text: "You won't be able to revert this!",
+				title: 'Eliminado',
 				type: 'success',
 			  })
 			}
@@ -59,33 +58,36 @@ angular.module('todo')
 		});
 	}
 
-	$scope.activo = function(){
-		consulta = "SELECT *, activo=1 FROM usuarios"
-		ConexionServ.query(consulta, []).then(function(result){
-			$scope.usuarios = result;
-			console.log('activo mostrado')
-
-		}, function(tx){
-			console.log('activo no mostrado', tx)
-		});
-	}
-
-	$scope.activo();
-
 	$scope.Actualizactivo = function(usuario){
 
 			
 		consulta = 'UPDATE usuarios SET activo=?  WHERE rowid=?'
 		ConexionServ.query(consulta, [ usuario.activo, usuario.rowid]).then(function(result){
 			console.log('activo actualizado ', result);
+			$scope.mostrarusuarios()
 		}, function(tx){
 			console.log('activo no se pudo actualizar', tx);
 		});
 
 }
 
+$scope.traeractivos=function(activo){
+	console.log(activo)
+	consulta = "SELECT *, rowid FROM usuarios WHERE activo=?"
+	ConexionServ.query(consulta, [activo]).then(function(result){
+		
+		$scope.usuarios = result;
+		console.log('activo mostrado')
+
+	}, function(tx){
+		console.log('activo no mostrado', tx)
+	});
+}
+$scope.traeractivos();
+
+
 	$scope.mostrarusuarios = function(result){
-		consulta = "SELECT *, rowid FROM usuarios"
+		consulta = "SELECT *, rowid FROM usuarios WHERE activo==1"
 		ConexionServ.query(consulta, []).then(function(result){
 			$scope.usuarios = result;
 			console.log('usuario mostrado')

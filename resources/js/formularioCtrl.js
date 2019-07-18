@@ -40,8 +40,8 @@ $scope.insertarusuarios = function(username, password){
 			if (nombres.value ==""   || apellido.value =="" || correo.value =="" || fecha.value =="" || celular.value =="" || usuario.value =="" || contraseña.value =="" || radio1.value =="" || radio2.value =="" ) {
 				toastr.warning('Completa todos los campos')
 			} else {
-				consulta = "INSERT INTO usuarios('nombres', 'apellidos', 'email', 'sexo', 'fecha', 'celular', 'activo', 'imagen_id', 'username', 'password') VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?,?)"
-				ConexionServ.query(consulta, [$scope.nombres, $scope.apellidos, $scope.email, $scope.sexo, $scope.fecha, $scope.celular, $scope.activo, $scope.imagen_id, $scope.username, $scope.password]
+				consulta = "INSERT INTO usuarios('nombres', 'apellidos', 'email', 'sexo', 'fecha', 'celular',  'imagen_id', 'username', 'password') VALUES( ?, ?, ?, ?, ?, ?, ?, ?,?)"
+				ConexionServ.query(consulta, [$scope.nombres, $scope.apellidos, $scope.email, $scope.sexo, $scope.fecha, $scope.celular,  $scope.imagen_id, $scope.username, $scope.password]
 			
 				
 				).then(function(){
