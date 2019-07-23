@@ -205,7 +205,7 @@
                                                   <br>
                                                     <div class="form-group">
                                                         <div class="custom-control custom-radio mb-2">
-                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input is-valid" ng-click="traeractivos(activo)"  ng-model="activo" value="1">
+                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input " ng-click="traeractivos(activo)"  ng-model="activo" value="1">
                                                             <label class="custom-control-label"   for="customRadio1">Activos</label>
                                                         </div>
                                                         <div class="custom-control custom-radio mb-2">
@@ -256,7 +256,7 @@
                                                 </td>
                                                 <td>
                                                        
-                                                        <button class=" btn btn-theme btn--icon"  data-toggle="modal" data-target="#modal-default"><i ng-click="editarusuarios(usuario)" class="zwicon-edit-circle"></i></button>
+                                                        <button class=" btn btn-theme btn--icon"  data-toggle="modal" data-target="#modal-default"><i ng-click="Actualizarusuarios(usuario)" class="zwicon-edit-circle"></i></button>
                                                 </td>
                                                 <td>
                                                         <button class="btn btn-theme btn--icon" ng-click="Swal(usuario)" ><i class="zwicon-user-delete" ></i></button>
@@ -339,52 +339,10 @@
 
     </section>
 
-    <div class="modal fade" id="modal-default" tabindex="10">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        
-                    </div>
-                    <div class="modal-body">
-                            <label>Nombre</label> <input  type="text" class="form-control " placeholder="Nombres" ng-model="usuarios_edit.nombres">
-                            Apellido: <br> <input  type="text" class="form-control " placeholder="Apellido" ng-model="usuarios_edit.apellidos">
-                            Email:<input  type="text" class="form-control " placeholder="Email" ng-model="usuarios_edit.email">
-                            Sexo:
-                            <div class="form-group">
-                                    <label></label> <br>
-                                    <label class="custom-control custom-radio">
-                                            <input type="radio" name="radio-inline" class="custom-control-input " value="F" ng-model="usuarios_edit.sexo"">Femenino
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description"></span>
-                                            <i class="form-group__bar"></i>
-                                    </label>
-                                    <label class="custom-control custom-radio">
-                                            <input type="radio" name="radio-inline" class="custom-control-input " value="M" ng-model="usuarios_edit.sexo""> Masculino
-                                            <span class="custom-control-indicator"></span>
-                                            <span class="custom-control-description"></span>
-                                            <i class="form-group__bar"></i>
-                                    </label>
-                             </div>
-                    Fecha:
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="zwicon-calendar-never"></i></span>
-                            <div class="form-group">
-                                <input type="text" class="form-control date-picker  " placeholder="Fecha" ng-model="usuarios_edit.fecha">
-                                <i class="form-group__bar"></i>
-                            </div>
-                        </div>
 
-                    Celular:<input  type="number" class="form-control " placeholder="Celular" ng-model="usuarios_edit.celular">
-                    Usuario:<input  type="text" class="form-control " placeholder="Username" ng-model="usuarios_edit.username">
-                    Password:<input  type="text" class=" form-control " placeholder="Password" ng-model="usuarios_edit.password">
-                    </div>
-                    <div class="modal-footer">
-                        <button ng-click="Actualizarusuarios(usuarios_edit)" type="button" class="btn btn-link" data-dismiss="modal">Guardar Cambios</button>
-                        <button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <!--Edit-->
+    
 
   
  

@@ -1,6 +1,6 @@
 angular.module('todo')
 
-.controller('tablaCtrl', function($scope, ConexionServ, $filter){
+.controller('tablaCtrl', function($scope, ConexionServ, $uibModal){
 	ConexionServ.createTables();
 
 	$scope.mostrarTablaInsertar=true;
@@ -72,7 +72,6 @@ angular.module('todo')
 }
 
 $scope.traeractivos=function(activo){
-	console.log(activo)
 	consulta = "SELECT *, rowid FROM usuarios WHERE activo=?"
 	ConexionServ.query(consulta, [activo]).then(function(result){
 		
@@ -100,34 +99,60 @@ $scope.traeractivos();
 
 	$scope.mostrarusuarios();
 
-	$scope.Actualizarusuarios = function(usu){
+	
 
+
+$scope.Actualizarusuarios = function (usuario) {
+	var modalInstance = $uibModal.open({
+		templateUrl: 'templates/editarusuario.html',
+		controller: 'EditarUsuraioCtrl',
+		size: 'lg',
+		resolve: {
+			usuario: function () {
+				return usuario;
+			}
+		}
+	  });
+  
+	  modalInstance.result.then(function () {
+		console.log('Cerrado');
+	  }, function () {
+		console.log('Modal dismissed at: ' + new Date());
+	  });
+}
+
+
+})
+
+
+.controller('EditarUsuraioCtrl', function (ConexionServ,$scope, $uibModalInstance, usuario) {
+	
+	$scope.usuarios_edit = usuario;
+
+
+	
+	
+	
+
+	$scope.Actualizarusuarios  = function(usuario){
+
+console.log(usuario)
 			
 		consulta = 'UPDATE usuarios SET nombres=?, apellidos=?, email=?, sexo=?, fecha=?, celular=?, activo=?, username=?, password=? WHERE rowid=?'
-		ConexionServ.query(consulta, [usu.nombres, usu.apellidos, usu.email, usu.sexo, usu.fecha, usu.celular, usu.activo,  usu.username, usu.password, usu.rowid]).then(function(result){
+		ConexionServ.query(consulta, [usuario.nombres, usuario.apellidos, usuario.email, usuario.sexo, usuario.fecha, usuario.celular, usuario.activo,  usuario.username, usuario.password, usuario.rowid]).then(function(result){
 			toastr.info('Usuario Actualizado')
 			console.log('usuarios actualizado ', result);
 		}, function(tx){
 			console.log('usuarios no se pudo actualizar', tx);
 		});
 
-}
 
-	$scope.eliminarusuarios = function(usuario){
-		consulta = 'DELETE FROM usuarios WHERE rowid=?'
-		ConexionServ.query(consulta, [usuario.rowid]).then(function(result){
-			$scope.usuario = result;
-			$scope.mostrarusuarios();
-			console.log('usuario eliminado')
-			toastr.error('Usuario eliminada')
-		}, function(tx){
-			console.log('usuario no se pudo eliminar', tx)
-		});
-}
+	  $uibModalInstance.close();
 
-	$scope.traer= function(){
-		
-	}
-
-})
+	};
+  
+	$scope.cancel = function () {
+	  $uibModalInstance.dismiss('cancel');
+	};
+});
 
