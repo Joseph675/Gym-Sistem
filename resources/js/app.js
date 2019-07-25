@@ -58,10 +58,10 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 		templateUrl: 'templates/yolo.html'
 	})
 
-	.state('meses', {
-		url: '/meses',
-		controller: 'MesesCtrl',
-		templateUrl: 'templates/meses.html'
+	.state('sincronizacion', {
+		url: '/sincronizacion',
+		controller: 'SincronizacionCtrl',
+		templateUrl: 'templates/Sincronizacion.html'
 		
 	})
 	

@@ -134,7 +134,7 @@ $scope.Actualizarusuarios = function (usuario) {
 	
 	
 
-	$scope.Actualizarusuarios  = function(usuario){
+	$scope.Actualizarusuarios  = function(){
 
 console.log(usuario)
 			
