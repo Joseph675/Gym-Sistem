@@ -1,0 +1,23 @@
+angular.module('app')
+
+.controller('sincronizacionCtrl', function($scope, ConexionServ){
+
+	ConexionServ.createTables();
+
+
+
+
+		$scope.mostrarUsus=function(usu){
+		console.log(usu)
+		consulta="SELECT *,rowid FROM usuarios WHERE id is null or eliminado=1 or modificado=1"
+			ConexionServ.query(consulta, []).then(function(result){
+			console.log('usuario mostrado', result)
+			$scope.usuarios = result;
+			}, function(tx){
+			console.log('usuario no mostrado', tx)
+		})
+
+	}
+
+	$scope.mostrarUsus();
+})

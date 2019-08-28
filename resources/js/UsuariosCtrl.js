@@ -95,6 +95,8 @@ $scope.Swal = function(){
 	
 	$scope.traerusuarios();
 
+
+	
 	
 
 
@@ -116,8 +118,8 @@ $scope.eliminarusuarios = function(usuario){
 	consulta = 'DELETE FROM usuarios WHERE rowid=?'
 	ConexionServ.query(consulta, [usuario.rowid]).then(function(result){
 		$scope.usuario = result;
-		$scope.traerusuarios();
 		console.log('usuario eliminada')
+		$scope.traerusuarios();
 
 	}, function(tx){
 		console.log('usuario no se pudo eliminar', tx)

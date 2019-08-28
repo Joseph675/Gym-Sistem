@@ -30,7 +30,7 @@ angular.module('todo')
 			confirmButtonText: 'Confirmar'
 		  }).then((result) => {
 			if (result.value) {
-				consulta = 'DELETE FROM usuarios WHERE rowid=?'
+				consulta = 'UPDATE usuarios SET eliminado=1 WHERE rowid=?'
 				ConexionServ.query(consulta, [usuario.rowid]).then(function(result){
 				$scope.usuario = result;
 				console.log('usuario eliminada')
@@ -86,7 +86,7 @@ $scope.traeractivos();
 
 
 	$scope.mostrarusuarios = function(result){
-		consulta = "SELECT *, rowid FROM usuarios WHERE activo==1"
+		consulta = "SELECT *, rowid FROM usuarios WHERE activo==1 and eliminado==0"
 		ConexionServ.query(consulta, []).then(function(result){
 			$scope.usuarios = result;
 			console.log('usuario mostrado')
@@ -138,7 +138,7 @@ $scope.Actualizarusuarios = function (usuario) {
 
 console.log(usuario)
 			
-		consulta = 'UPDATE usuarios SET nombres=?, apellidos=?, email=?, sexo=?, fecha=?, celular=?, activo=?, username=?, password=? WHERE rowid=?'
+		consulta = 'UPDATE usuarios SET modificado=1, nombres=?, apellidos=?, email=?, sexo=?, fecha=?, celular=?, activo=?, username=?, password=? WHERE rowid=?'
 		ConexionServ.query(consulta, [usuario.nombres, usuario.apellidos, usuario.email, usuario.sexo, usuario.fecha, usuario.celular, usuario.activo,  usuario.username, usuario.password, usuario.rowid]).then(function(result){
 			toastr.info('Usuario Actualizado')
 			console.log('usuarios actualizado ', result);

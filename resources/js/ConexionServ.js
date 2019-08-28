@@ -18,6 +18,8 @@ angular.module('todo')
                 "celular integer  NULL," +
                 "activo integer  DEFAULT  '1' NOT NULL," +
                 "imagen_id integer  NOT NULL,"+
+                "modificado integer DEFAULT '0' NOT NULL ," +
+                "eliminado integer DEFAULT '0' NOT NULL ," +
                 "username varchar(100)  NOT NULL , " +
                 "password varchar(100)  NOT NULL)" ;
 

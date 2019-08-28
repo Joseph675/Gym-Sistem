@@ -214,6 +214,11 @@
                                             <th>Apellido</th>
                                             <th>Celular</th>
                                             <th>Username</th>
+                                            <th>Modificado</th>
+                                            <th>Eliminado</th>
+                                            <th>Nuevo</th>
+
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -223,6 +228,9 @@
                                             <td>{{usuario.apellidos}}</td>
                                             <td>{{usuario.celular}}</td>
                                             <td>{{usuario.username}}</td>
+                                            <td> <span ng-show="usuario.modificado" style="color: rgb(255, 157, 0)">Modificado</span>  </td> 
+                                            <td> <span ng-show="usuario.eliminado"  style="color: rgb(233, 18, 18)">Eliminado</span> </td> 
+                                            <td> <span ng-show="!usuario.id"  style="color: rgb(37, 217, 241)">Nuevo</span>  </td> 
                                         </tr>
                                         
                                   

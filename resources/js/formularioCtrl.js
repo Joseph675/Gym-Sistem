@@ -79,7 +79,7 @@ $scope.insertarusuarios = function(username, password){
 	$scope.Actualizarusuarios = function(usu){
 
 			
-		consulta = 'UPDATE usuarios SET nombres=?, apellidos=?, email=?, sexo=?, fecha=?, celular=?, activo=?, username=?, password=?, cita=? WHERE rowid=?'
+		consulta = 'UPDATE usuarios SET modificado=1, nombres=?, apellidos=?, email=?, sexo=?, fecha=?, celular=?, activo=?, username=?, password=?, cita=? WHERE rowid=?'
 		ConexionServ.query(consulta, [usu.nombres, usu.apellidos, usu.email, usu.sexo, usu.fecha, , usu.celular, usu.activo,  usu.username, usu.password, usu.cita, usu.rowid]).then(function(result){
 			console.log('usuarios actualizado ', result);
 		}, function(tx){
@@ -89,7 +89,7 @@ $scope.insertarusuarios = function(username, password){
 }
 
 	$scope.eliminarusuarios = function(usuario){
-		consulta = 'DELETE FROM usuarios WHERE rowid=?'
+		consulta = 'UPDATE usuarios SET eliminado=1 WHERE rowid=?'
 		ConexionServ.query(consulta, [usuario.rowid.$index]).then(function(result){
 			$scope.usuario = result;
 			console.log('usuario eliminada')
