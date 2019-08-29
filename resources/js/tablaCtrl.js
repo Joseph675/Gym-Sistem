@@ -72,7 +72,7 @@ angular.module('todo')
 }
 
 $scope.traeractivos=function(activo){
-	consulta = "SELECT *, rowid FROM usuarios WHERE activo=?"
+	consulta = "SELECT *, rowid FROM usuarios WHERE activo=? and eliminado==0"
 	ConexionServ.query(consulta, [activo]).then(function(result){
 		
 		$scope.usuarios = result;
