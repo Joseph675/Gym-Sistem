@@ -1,6 +1,6 @@
 angular.module('todo')
 
-.controller('SincronizacionCtrl', function($scope, ConexionServ){
+.controller('SincronizacionCtrl', function($scope, ConexionServ, $http){
 	ConexionServ.createTables();
 
 	$scope.mostrarusuarios = function(result){
@@ -15,4 +15,13 @@ angular.module('todo')
 	}
 
 	$scope.mostrarusuarios();
+
+	$http.put("").then(
+		function(result){
+			console.log('Datos traidos')
+		},
+		function(result){
+			console.log("Error")
+		}
+	)
 })

@@ -37,44 +37,32 @@ angular.module('todo')
 		});
 	}
 
-	$scope.insertarasistencia = function(usu){
+	$scope.insertartareas = function(){
 		
-		consulta = "INSERT INTO asistencias('cita', 'usuarios_id') VALUES(?,?)"
+		consulta = "INSERT INTO tareas('tarea') VALUES(?)"
 		
-			$scope.cita= new Date()
-		ConexionServ.query(consulta, [$scope.cita, usu.rowid ]).then(function(result){
-			$scope.traerusuarios();
+		ConexionServ.query(consulta, [$scope.tarea]).then(function(result){
 			
-			console.log('asistencias insertado')
+			console.log('tarea insertado')
 		}, function(tx){
-			console.log('asistencias no se pudo insertar', tx)
+			console.log('tarea no se pudo insertar', tx)
 		});
 	}
 
 	
 
-	$scope.traerusuarios=function(){
-		ConexionServ.query('SELECT *, rowid FROM usuarios').then(function(usuarios){
-			for (let i = 0; i < usuarios.length; i++) {
-				const usu = usuarios[i];
-				console.log('holas')
-				consulta = 'SELECT *, rowid  FROM asistencias WHERE usuarios_id=?'
-				ConexionServ.query(consulta, [usuarios[i].rowid]).then(function(asistencias){
-					usuarios[i].asistencias=asistencias;
-					console.log('siii')
-					
-				}, function(tx){
-					console.log('nooo')
-				})
-			}
+	$scope.traertareas=function(){
+		consulta = "SELECT *, rowid FROM tareas "
+		ConexionServ.query(consulta, []).then(function(result){
 			
-			$scope.usuarios=usuarios;
-			
-		})
-	}
+			$scope.usuarios = result;
+			console.log('tarea mostrado')
 	
-	$scope.traerusuarios();
-
+		}, function(tx){
+			console.log('tarea no mostrado', tx)
+		});
+	}
+	$scope.traertareas();
 	
 
 

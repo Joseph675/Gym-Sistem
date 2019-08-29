@@ -23,9 +23,12 @@ angular.module('todo')
                 "username varchar(100)  NOT NULL , " +
                 "password varchar(100)  NOT NULL)" ;
 
-      sqlasistencias = "CREATE TABLE IF NOT EXISTS asistencias (id integer," +
+     sqlasistencias = "CREATE TABLE IF NOT EXISTS asistencias (id integer," +
                 "cita varchar(100)  DEFAULT NULL collate nocase, " +
                 "usuarios_id integer  NOT NULL)" ;
+
+     sqltareas = "CREATE TABLE IF NOT EXISTS tareas (id integer," +
+                "tarea varchar(100)  DEFAULT NULL collate nocase)" ;
 
    
 
@@ -47,6 +50,11 @@ angular.module('todo')
             prom = this.query(sqlasistencias).then(function(){
               console.log('asistencias Tabla creada');
           })
+
+          prom = this.query(sqltareas).then(function(){
+            console.log('tarea Tabla creada');
+        })
+
           promesas.push(prom);
 
             
