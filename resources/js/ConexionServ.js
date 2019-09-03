@@ -58,7 +58,6 @@ angular.module('todo')
           promesas.push(prom);
 
             
-          promesas.push(prom);
 
            
 

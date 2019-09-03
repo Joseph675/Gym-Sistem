@@ -210,11 +210,7 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <tr  ng-repeat="tare in tarea">
-                                    <td>{{tare.tarea}}</td>
-                                </tr>
-                            </div>
+                           
         </section>
     
 
@@ -224,5 +220,17 @@
             </div>
             <button ng-click="insertartareas()"   class="btn btn-theme btn-block" id="sa-info">Ingresar tarea</button>
         </form>
+
+
+        <div>
+            <table>
+                <th>Tareas</th>
+                <tr  ng-repeat="tare in tareas">
+                        <td>{{tare.tarea}}</td>
+
+                </tr>
+            </table>
+           
+        </div>
 
     <script src="resources/js/app.min.js"></script>

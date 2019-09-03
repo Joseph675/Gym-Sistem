@@ -193,19 +193,25 @@
                         <div class="card-body">
 
 
+                            <div>
+                                <button class="btn btn-theme btn--icon-text" ng-click="subir_datos()"><i style="font-size: 18px" class="zwicon-cloud-upload"></i> Subir Datos</button>
+                                <button class="btn btn-theme btn--icon-text" ng-click="descargar_datos()"><i style="font-size: 18px" class="zwicon-cloud-download"></i> Descargar Datos</button>
+                                <button class="btn btn-theme btn--icon-text" ng-click="eliminar_tablas_promise()"><i style="font-size: 18px" class="zwicon-user-delete"></i> Eliminar Datos</button>
+                                
+                            </div>
+
+                            <div>
+                                {{ cambios_sin_subir }} cambios sin subir
+                            </div>
+                                    
+
+
                             
 
                             <div class="table-responsive data-table ">
                                 
                                 <table id="searchObjResults" class="table">
 
-                                        <div class="btn-demo">
-                                            <button class="btn btn-theme btn--icon-text" ng-click="subir_datos()"><i style="font-size: 18px" class="zwicon-cloud-upload"></i> Subir Datos</button>
-                                            <button class="btn btn-theme btn--icon-text" ng-click="descargarusuarios"><i style="font-size: 18px" class="zwicon-cloud-download"></i> Descargar Datos</button>
-                                            <button class="btn btn-theme btn--icon-text" ><i style="font-size: 18px" class="zwicon-user-delete"></i> Eliminar Datos</button>
-                                            
-                                        </div>
-                                        
                                     <thead>
                                         
                                         <tr>
