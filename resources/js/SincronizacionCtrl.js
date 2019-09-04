@@ -67,14 +67,14 @@ angular.module('todo')
 			toastr.info('Primero debes eliminar los datos locales');
 			return;
 		}
-		console.log('90iokjn');
 		function descargar() {
-			
+			console.log("auqi");
 			$scope.estado_descarga = 'Descargando';
-			rutaServidor = ("http://192.168.100.31/feryz_server/public/taxis/");
+			rutaServidor = "http://192.168.100.31/feryz_server/public/taxis/";
 			
 			$http.get(rutaServidor + 'all', {params: {username: 'admin', password: 'memo'} }).then (function(result){
 				$scope.estado_descarga = 'insertando';
+				console.log("auqi2")
 				
 				$scope.valor_insertado 	= function(){
 					return DescargarTodoServ._valor_insertado;
@@ -85,14 +85,14 @@ angular.module('todo')
 				
 				ConexionServ.createTables().then(function(){
 					toastr.info('Datos descargados.', 'Tablas creadas.');
-					
+					console.log("descargados")
 					DescargarTodoServ.insertar_datos_descargados(result.data).then(function(result){
-						AuthServ.update_user_storage($scope.USER);
 						$scope.estado_descarga = 'Insertados. Actualice la página.';
 						console.log('Todas los datos Insertados', result);
 					})
 				})
 				
+				console.log("asdasd")
 				
 
 			}), function(){

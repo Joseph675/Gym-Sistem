@@ -3,10 +3,6 @@ angular.module('todo')
 .controller('loginCtrl', function($scope, ConexionServ, $state){
 	ConexionServ.createTables();
 
-	$scope.editar = false ;	
-	$scope.modificando = false ;	
-
-
 	
 
 	$scope.insertarusuarios = function(username, password){
@@ -43,7 +39,19 @@ angular.module('todo')
 	}
 	
 
-	$scope.mostrarusuarios = function(username, password){
+	$scope.mostrarusuarios = function Login(username, password){
+		var done=0; 
+		var usuario=document.login.usuario.value; 
+		var password=document.login.password.value; 
+		if (usuario=="USUARIO1" && password=="CONTRASEÑA1") { 
+		window.location="http://192.168.100.31/feryz_server/public/taxis/"; 
+		} 
+		if (usuario=="USUARIO2" && password=="CONTRASEÑA2") { 
+		window.location="http://192.168.100.31/feryz_server/public/taxis/"; 
+		} 
+		if (usuario=="" && password=="") { 
+		window.location="errorpopup.html"; 
+		}
 		ConexionServ.query('SELECT *, rowid FROM usuarios WHERE username=? and password=?', [username, password]).then(function(result){
 			console.log(result)
 				if(result.length > 0){
@@ -59,30 +67,20 @@ angular.module('todo')
 
 
 	
-
-	$scope.Actualizarusuarios = function(usu){
-
-			
-		consulta = 'UPDATE usuarios SET nombres=?, apellidos=?, email=?, sexo=?, fecha=?, celular=?, activo=?, username=?, password=?, cita=? WHERE rowid=?'
-		ConexionServ.query(consulta, [usu.nombres, usu.apellidos, usu.email, usu.sexo, usu.fecha, , usu.celular, usu.activo,  usu.username, usu.password, usu.cita, usu.rowid]).then(function(result){
-			console.log('usuarios actualizado ', result);
-		}, function(tx){
-			console.log('usuarios no se pudo actualizar', tx);
-		});
-
-}
-
-	$scope.eliminarusuarios = function(usuario){
-		consulta = 'DELETE FROM usuarios WHERE rowid=?'
-		ConexionServ.query(consulta, [usuario.rowid.$index]).then(function(result){
-			$scope.usuario = result;
-			console.log('usuario eliminada')
-
-		}, function(tx){
-			console.log('usuario no se pudo eliminar', tx)
-		});
-}
-
+	function Login(){ 
+		var done=0; 
+		var usuario=document.login.usuario.value; 
+		var password=document.login.password.value; 
+		if (usuario=="USUARIO1" && password=="CONTRASEÑA1") { 
+		window.location="http://192.168.100.31/feryz_server/public/taxis/"; 
+		} 
+		if (usuario=="USUARIO2" && password=="CONTRASEÑA2") { 
+		window.location="http://192.168.100.31/feryz_server/public/taxis/"; 
+		} 
+		if (usuario=="" && password=="") { 
+		window.location="errorpopup.html"; 
+		} 
+		} 
 
 })
 

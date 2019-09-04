@@ -49,21 +49,18 @@ angular.module('todo')
 
             prom = this.query(sqlasistencias).then(function(){
               console.log('asistencias Tabla creada');
-          })
+            })
 
-          prom = this.query(sqltareas).then(function(){
-            console.log('tarea Tabla creada');
-        })
+            prom = this.query(sqltareas).then(function(){
+              console.log('tarea Tabla creada');
+            })
+            promesas.push(prom);
 
-          promesas.push(prom);
+            Promise.all(promesas).then(function () {
+              defered.resolve(result);
+            })
 
-            
-
-           
-
-           
-            
-            return defered.promise;
+          return defered.promise;
         
         },
         
