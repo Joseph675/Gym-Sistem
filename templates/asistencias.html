@@ -197,7 +197,7 @@
                                             <td >
                                                 <div >
                                             
-                                                <button data-type="success" ng-click="editarAsistencia(asi)"  ng-repeat="asi in usu.asistencias" class="btn btn--icon-text   btn-outline-theme-dark " ><i class="zwicon-calendar-day" ></i>{{asi.cita}}</button>
+                                                <button data-type="success" ng-click="editarAsistencia(asi)"  ng-repeat="asi in usu.asistencias" class="btn btn--icon-text   btn-outline-theme-dark " ><i class="zwicon-calendar-day" ></i>{{asi.cita | date:'dd/MM/yyyy'}}</button>
 
                                                  <button class=" btn btn-theme btn--icon btn-outline-theme d-print-none" ng-click="insertarasistencia(usu)" > 
                                                     +

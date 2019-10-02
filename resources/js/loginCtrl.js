@@ -16,7 +16,7 @@ angular.module('todo')
 
 			}else{
 				
-				consulta = "INSERT INTO usuarios('nombres', 'apellidos', 'email', 'sexo', 'fecha', 'celular', 'activo', 'imagen_id', 'username', 'password') VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?,?)"
+				consulta = "INSERT INTO usuarios('nombres', 'apellidos', 'email', 'sexo', 'fecha', 'celular', 'activo', 'imagen_id', 'username', 'password') VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 				ConexionServ.query(consulta, [$scope.nombres, $scope.apellidos, $scope.email, $scope.sexo, $scope.fecha, $scope.celular, $scope.activo, $scope.imagen_id, $scope.username, $scope.password]
 				
 					
@@ -41,8 +41,8 @@ angular.module('todo')
 
 	$scope.mostrarusuarios = function Login(username, password){
 		var done=0; 
-		var usuario=document.login.usuario.value; 
-		var password=document.login.password.value; 
+		var usuario=$scope.username; 
+		var password=$scope.password; 
 		if (usuario=="USUARIO1" && password=="CONTRASEÑA1") { 
 		window.location="http://192.168.100.31/feryz_server/public/taxis/"; 
 		} 
@@ -69,8 +69,8 @@ angular.module('todo')
 	
 	function Login(){ 
 		var done=0; 
-		var usuario=document.login.usuario.value; 
-		var password=document.login.password.value; 
+		var usuario=$scope.username; 
+		var password=$scope.password; 
 		if (usuario=="USUARIO1" && password=="CONTRASEÑA1") { 
 		window.location="http://192.168.100.31/feryz_server/public/taxis/"; 
 		} 
