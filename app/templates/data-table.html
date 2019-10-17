@@ -190,30 +190,31 @@
                             </div>
                         </div>
                     </header>
+
+                    
                         <div class="card">
                             <div class="card-body">
 
-                                <div class="table-responsive data-table ">
-                                    
-                                    <table id="searchObjResults" class="table">
-                                            <div >
+                                <div >
+                                    <div >
                                                     
-                                                <input class="form-control" type="text" placeholder="Buscar Usuario" aria-label="Search" ng-model="buscarusuario">
-                                                  <br>
-                                                    <div class="form-group">
-                                                        <div class="custom-control custom-radio mb-2">
-                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input " ng-click="traeractivos(activo)"  ng-model="activo" value="1">
-                                                            <label class="custom-control-label"   for="customRadio1">Activos</label>
-                                                        </div>
-                                                        <div class="custom-control custom-radio mb-2">
-                                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" ng-click="traeractivos(activo)"  ng-model="activo" value="0">
-                                                            <label class="custom-control-label"   for="customRadio2">No activos</label>
-                                                        </div>
-                                                    </div>
+                                        <input class="form-control" type="text" placeholder="Buscar Usuario" aria-label="Search" ng-model="buscarusuario">
+                                          <br>
+                                            <div class="form-group">
+                                                <div class="custom-control custom-radio mb-2">
+                                                    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input " ng-click="traeractivos(activo)"  ng-model="activo" value="1">
+                                                    <label class="custom-control-label"   for="customRadio1">Activos</label>
+                                                </div>
+                                                <div class="custom-control custom-radio mb-2">
+                                                    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" ng-click="traeractivos(activo)"  ng-model="activo" value="0">
+                                                    <label class="custom-control-label"   for="customRadio2">No activos</label>
+                                                </div>
                                             </div>
+                                    </div>
+                                    <table  class="table table-dark mb-0">
+                                            
                                             
                                         <thead>
-                                            
                                             <tr>
                                                 <th>#</th>
                                                 <th>Nombre</th>
@@ -226,7 +227,6 @@
                                                 <th>Activo/No Activo</th>
                                                 <th>Editar</th>
                                                 <th>Eliminar</th>
-                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -264,8 +264,10 @@
                                             
                                       
                                         </tbody>
+
                                     </table>
                                 </div>
+
     
                                 
                             </div>

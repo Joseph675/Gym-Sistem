@@ -183,21 +183,7 @@
 
                         <div class="listview">
                             <div class="listview__item" >
-                                <div class="checkbox-char todo__item">
-                                    <input type="checkbox" id="char-1">
-                                    <label for="char-1">F</label>
-
-                                    <div class="listview__content"  ng-repeat="tare in tarea">
-                                        <div class="listview__heading">{{tare.tarea}}</div>
-                                        <p>Today at 8.30 AM</p>
-
-                                        <div class="listview__attrs">
-                                            <span>#Messages</span>
-                                            <span>!!!</span>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
+                                
 
                                 <div class="actions listview__actions">
                                     <div class="dropdown actions__item">
@@ -214,23 +200,6 @@
         </section>
     
 
-        <form action="">
-            <div>
-                <input type="text"  class="form-control  " placeholder="Nombre" ng-model="tarea" >
-            </div>
-            <button ng-click="insertartareas()"   class="btn btn-theme btn-block" id="sa-info">Ingresar tarea</button>
-        </form>
 
-
-        <div>
-            <table>
-                <th>Tareas</th>
-                <tr  ng-repeat="tare in tareas">
-                        <td>{{tare.tarea}}</td>
-
-                </tr>
-            </table>
-           
-        </div>
-
+        
     <script src="resources/js/app.min.js"></script>
