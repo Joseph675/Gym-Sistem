@@ -202,13 +202,12 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr data-toggle="modal" data-target="#modal-no-backdrop" class="btn-demo" ng-click="" ng-repeat="usuario in usuarios | filter:buscarusuario:activo">
+                                        <tr data-toggle="modal" data-target="#modal-large" class="btn-demo" ng-click="" ng-repeat="usuario in usuarios | filter:buscarusuario:activo">
                                                 <td >{{$index+1}}</td>
                                                 <td >{{usuario.nombres}}</td>
                                                 <td>{{usuario.apellidos}}</td>
                                                 <td>{{usuario.sexo}}</td>
                                                 <td>{{usuario.celular}}</td>
-                                                <button class="btn btn-theme" ></button>
                                         </tr>
                                         
                                     </tbody>
@@ -219,26 +218,12 @@
 
                 
 
-                <footer class="footer d-none d-sm-block">
-                    <p>© Super Admin Responsive. All rights reserved.</p>
-
-                    <ul class="footer__nav">
-                        <a href="">Homepage</a>
-                        <a href="">Company</a>
-                        <a href="">Support</a>
-                        <a href="">News</a>
-                        <a href="">Contacts</a>
-                    </ul>
-                </footer>
-                <div class="btn-demo">
-                        <button class="btn btn-theme" data-toggle="modal" data-target="#modal-no-backdrop">Backdrop disabled</button>
-                </div>       
              
             </section>
             
          
-            <div class="modal fade" id="modal-no-backdrop" data-backdrop="false" tabindex="-1">
-                    <div class="modal-dialog">
+            <div class="modal fade" id="modal-large" tabindex="-1" data-backdrop="false" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Calendario</h5>
@@ -246,7 +231,7 @@
                             <div class="modal-body">
                                     <div class="content__inner">
                                             <header class="content__title content__title--calendar">
-                                                <h1><span id="calendar-title">Calendar</span> <small>FullCalendar is a highly customizable open source javaScript event calendar.</small></h1>
+                                                <h1><span id="calendar-title">Calendar</span> </h1>
                         
                                                 <div class="actions actions--calendar">
                                                     <a href="" data-toggle="tooltip" title="Previous" class="actions__item" data-calendar-view="prev"><i class="zwicon-arrow-square-left"></i></a>
@@ -262,7 +247,7 @@
                                                 <div class="modal-dialog modal-dialog-centered">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title">New Event</h5>
+                                                            <h5 class="modal-title">Añadir asistencia</h5>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="form-group">
@@ -306,13 +291,88 @@
                                         </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-link">Save changes</button>
-                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-link">Guardar</button>
+                                <button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
 
+            
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Asistencias</h4>
+                        <h6 class="card-subtitle">Seleccionar usuario:</h6>
+
+                        <table class="table table-hover mb-0">
+                            <thead>
+                                    <input class="form-control" type="text" placeholder="Buscar Usuario" aria-label="Search" ng-model="buscarusuario">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Sexo</th>
+                                    <th>Celular</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-toggle="modal" data-target="#modal-centered" class="btn-demo" ng-click="" ng-repeat="usu in usuarios | filter:buscarusuario:activo">
+                                    <td >#{{$index+1}}</td>
+                                    <td >{{usu.nombres}}</td>
+                                    <td >{{usu.apellidos}}</td>
+                                    <td >{{usu.sexo}}</td>
+                                    <td >{{usu.celular}}</td>
+
+
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="modal-centered" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Default modal</h5>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-dark mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Fecha</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr  >
+                                            <th scope="row">1</th>
+                                            <td>ss
+                                                <button data-type="success" ng-click="editarAsistencia(asi)"  ng-repeat="asi in usu.asistencias" class="btn btn--icon-text   btn-outline-theme-dark " ><i class="zwicon-calendar-day" ></i>{{asi.cita | date:'dd/MM/yyyy'}}</button>
+                                            </td>
+                                            
+                                        </tr>
+                                       
+                                    </tbody>
+                                </table>
+    
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-link">Save changes</button>
+                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         
-  <script src="resources/js/app.min.js"></script>
+
+            <script src="resources/js/app.min.js"></script>
+   
+            <script src="demo/js/demo.js"></script>
+    

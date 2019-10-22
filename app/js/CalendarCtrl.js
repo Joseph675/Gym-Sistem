@@ -60,3 +60,44 @@ angular.module('todo')
 
 
 })
+
+
+
+.controller('EditarAsistenciaCtrl', function (ConexionServ,$scope, $uibModalInstance, asis) {
+	$scope.asis = asis;
+	
+
+
+	$scope.eliminarasistencias = function(usu){
+		consulta = 'DELETE FROM asistencias WHERE rowid=?'
+		ConexionServ.query(consulta, [usu.rowid]).then(function(result){
+			
+			$scope.usu = result;
+			$scope.traerusuarios();
+		console.log('si elimino')
+	
+		}, function(tx){
+			console.log('asistencias no se pudo eliminar', tx)
+		});
+		 $uibModalInstance.close();
+	}
+
+	
+	
+	
+
+	$scope.ok = function (asis) {
+		consulta = 'UPDATE asistencias SET cita=? WHERE rowid=?'
+		ConexionServ.query(consulta, [asis.cita, asis.rowid]).then(function(result){
+			console.log('asistencias actualizado ', result);
+		}, function(tx){
+			console.log('asistencias no se pudo actualizar', tx);
+		});
+	  $uibModalInstance.close();
+
+	};
+  
+	$scope.cancel = function () {
+	  $uibModalInstance.dismiss('cancel');
+	};
+});
