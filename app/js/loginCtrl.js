@@ -3,16 +3,26 @@ angular.module('todo')
 .controller('loginCtrl', function($scope, ConexionServ, $state){
 	ConexionServ.createTables();
 
+	ConexionServ.query('SELECT *, rowid FROM usuarios WHERE username="admin" and password="123" ').then(function(result){
+		if(result.length == 0){
+			
+			consulta = "INSERT INTO usuarios(nombres, apellidos, email, sexo, celular, activo, username, password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)"
+			ConexionServ.query(consulta, ['Joseth', 'Guerrero', 'davidguerrero777@gmail.com', 'M', 3203602610, 1, 'admin', '123']).then(function(){
+				console.log('Admin creado');
+			});
+		}
+			
+	})
+
+	
 	
 
 	$scope.insertarusuarios = function(username, password){
 
-		
-	
 		ConexionServ.query('SELECT *, rowid FROM usuarios WHERE username=? and password=?', [username, password]).then(function(result){
 			console.log(result)
-				if(result.length > 0){
-					toastr.warning('No se pudo insertar')
+			if(result.length > 0){
+				toastr.warning('No se pudo insertar')
 
 			}else{
 				
