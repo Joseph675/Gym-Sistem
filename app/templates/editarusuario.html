@@ -1,68 +1,123 @@
     
 
-<div class="modal-body" id="modal-body">
-    <div class="modal-content">
-        <div class="modal-header">
-                <h3 class="modal-title" id="modal-title">Editar Usuario</h3>
-        <div class="modal-body">
+<div class=" modal-dialog-centered " role="document" >
+    <div class="modal-content" style="background-color: black; border-radius: 5px;">
 
-                <div class="col-sm-6">
-                        <div class="form-group"  class="wrap-input2 validate-input" >
-                <label>Nombre</label> <input  type="text" class="form-control " placeholder="Nombres" ng-model="usuarios_edit.nombres">
-
-                        </div>
-                </div>
-
-                <div class="col-sm-6">
-                        <div class="form-group"  class="wrap-input2 validate-input" >
-                Apellido: <br> <input  type="text" class="form-control " placeholder="Apellido" ng-model="usuarios_edit.apellidos">
-                        </div>
-                </div>
-
-                <div class="col-sm-6">
-                        <div class="form-group"  class="wrap-input2 validate-input" >
-                Email:<input  type="text" class="form-control " placeholder="Email" ng-model="usuarios_edit.email">
-                        </div>
-                </div>
-                Sexo:
-                <div class="form-group">
-                        <br>
-                        <label class="custom-control custom-radio">
-                                <input type="radio" name="radio-inline" class="custom-control-input " value="F" ng-model="usuarios_edit.sexo"">Femenino
-                                <span class="custom-control-indicator"></span>
-                                <span class="custom-control-description"></span>
-                                <i class="form-group__bar"></i>
-                        </label>
-                        <label class="custom-control custom-radio">
-                                <input type="radio" name="radio-inline" class="custom-control-input " value="M" ng-model="usuarios_edit.sexo""> Masculino
-                                <span class="custom-control-indicator"></span>
-                                <span class="custom-control-description"></span>
-                                <i class="form-group__bar"></i>
-                        </label>
-                 </div>
-        Fecha:
-            <div class="input-group">
-                <span class="input-group-addon"><i class="zwicon-calendar-never"></i></span>
-                <div class="form-group">
-                    <input type="text" class="form-control date-picker  " placeholder="Fecha" ng-model="usuarios_edit.fecha">
-                    <i class="form-group__bar"></i>
-                </div>
-            </div>
-
-        Celular:<input  type="number" class="form-control " placeholder="Celular" ng-model="usuarios_edit.celular">
-        Usuario:<input  type="text" class="form-control " placeholder="Username" ng-model="usuarios_edit.username">
-        Password:<input  type="text" class=" form-control " placeholder="Password" ng-model="usuarios_edit.password">
-        </div>
-        
-    </div>
-</div>
-
-
-
-
-<div class="modal-footer">
-    <button class="btn btn-info" type="button" ng-click="Actualizarusuarios(usuarios)">Aceptar</button>
-    <button class="btn btn-light" type="button" ng-click="cancel()">Cancelar</button>
-</div>
+                <form >
+                                <div class="card">
+                                        
+                                        <div class="card-body">
+                                            
+                                           
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group"  class="wrap-input2 validate-input" >
+                                                        <label>Nombre</label>
+    
+                                                        <input id="nombres" type="text" class="form-control  " placeholder="Nombre" ng-model="usuarios_edit.nombres">
+    
+                                                        <i class="form-group__bar"></i>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-sm-6">
+                                                    <div class="form-group"  class="wrap-input2 validate-input" >
+                                                        <label>Apellido</label>
+                                                        <input id="apellido" type="text" class="form-control " placeholder="Apellido"  ng-model="usuarios_edit.apellidos">
+                                                        <i class="form-group__bar"></i>
+                                                    </div>
+                                                </div>
+    
+                                                <div class="col-sm-6"  class="wrap-input2 validate-input" >
+                                                        <div class="form-group">
+                                                            <label>Email</label>
+                                                            <input id="email" type="text" class="form-control " ng-model="usuarios_edit.email">
+                                                            <i class="form-group__bar"></i>
+                                                        </div>
+                                                 </div>
+                                                 
+                                                 <div class="col-sm-6">
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div class="form-group">
+                                                                <label>Sexo</label>
+                        
+                                                                <select ng-model="usuarios_edit.sexo" class="select2" data-placeholder="Seleciona un sexo">
+                                                                    <option></option>
+                                                                    <option id="f" ng-model="sexo">F</option>
+                                                                    <option id="m" ng-model="sexo">M</option>
+                                                                   
+                                                                </select>
+                                                            </div>
+                                                        </div>
+    
+                                                           
+                                                  </div>
+    
+                                                        
+                                                    
+                                                        
+                                                 </div>
+                                                 
+                                                
+                                                 <div class="col-sm-6">
+                                                    <label>Fecha</label>
+                
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="zwicon-calendar-never"></i></span>
+                                                        </div>
+                                                        <input id="fecha" type="text" class="form-control date-picker" placeholder="Fecha" ng-model="usuarios_edit.fecha">
+                                                    </div>
+                                                </div>
+                                               
+                                                <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Telefono</label>
+                                                            
+                                                            <input id="celular" type="number" class="form-control input-mask" ng-model="usuarios_edit.celular">
+                                                            <i class="form-group__bar"></i>
+                                                        </div>
+                                                 </div>
+                                                
+                                            </div>
+                                            
+                                         
+    
+                                            <div class="row">
+                                                    
+                                                    <div class="col-sm-6">
+                                                            <div class="form-group">
+                                                                <label>Usuario</label>
+                                                                
+                                                                <input id="usuario" type="text" class="form-control " placeholder="Usuario"  ng-model="usuarios_edit.username">
+                                                                <i class="form-group__bar"></i>
+                                                            </div>
+                                                        </div> 
+    
+                                                
+                                                <br>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Password </label>
+                                                        <input id="contraseña" type="password" class="form-control " placeholder="Password" ng-model="usuarios_edit.password">
+                                                        <i class="form-group__bar"></i>
+                                                    </div>
+                                                </div>
+                                        
+                                               
+                                     
+                                        
+                                        
+                                </div>
+                                   
+                                <div class="modal-footer">
+                                                <button class="btn btn-info" type="button" ng-click="Actualizarusuarios(usuarios)">Aceptar</button>
+                                                <button class="btn btn-light" type="button" ng-click="cancel()">Cancelar</button>
+                                </div>   
+                                 
+                                
+                        </form>
 
 <script src="resources/js/app.min.js"></script>

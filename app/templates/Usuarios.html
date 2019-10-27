@@ -174,52 +174,25 @@
         
           <section class="content">
              
-               
-                  <div class="card">
-                    <div class="card-body">
-                     <table class="table table-bordered mb-0" >
-                        <thead>
-                               <tr>
-                                <th>#</th>
-                                <th style="width: 25px ">Nombre</th>
-                                <th>Apellido</th>
-                                <th>Telefono</th>
-                              </tr>
-                        </thead>
-                        <tbody>
-                              <tr ng-repeat="usu in usuarios">
-                                <th>#{{$index+1}}</th>
-                                <td>{{usu.nombres}}</td>
-                                <td>{{usu.apellidos}}</td>
-                                <td>{{usu.celular}}</td>
-                             </tr>
-                          
-                        </tbody>
-                      </table>
-                  </div>
+            <button class="btn btn-theme" data-toggle="modal" data-target="#modal-centered">Vertically centered</button>
+
+            <div class="modal fade" id="modal-centered" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Default modal</h5>
+                        </div>
+                        <div class="modal-body">
+                            Curabitur blandit mollis lacus. Nulla sit amet est. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Cras sagittis.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link">Save changes</button>
+                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
-
-
             </div>
-                  <footer class="footer hidden-xs-down">
-                  <p>© Super Admin Responsive. All rights reserved.</p>
-
-                  <ul class="nav footer__nav">
-                      <a class="nav-link" href="#">Homepage</a>
-
-                      <a class="nav-link" href="#">Company</a>
-
-                      <a class="nav-link" href="#">Support</a>
-
-                      <a class="nav-link" href="#">News</a>
-
-                      <a class="nav-link" href="#">Contacts</a>
-                  </ul>
-              </footer>
-              </div>
+        </div>
           </section>
 
 
-
-      <script src="resources/js/app.min.js"></script>
-  

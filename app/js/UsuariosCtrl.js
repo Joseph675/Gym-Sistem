@@ -2,8 +2,41 @@
 angular.module('todo')
 
 
-.controller('UsuariosCtrl', function($scope, ConexionServ, $uibModal){
+.controller('UsuariosCtrl', function($scope, ConexionServ, $uibModal, $state ){
 	ConexionServ.createTables();
+
+ 
+    console.log($state.params.usu_id)
+
+    usu_id=$state.params.usu_id;
+
+      
+    mes = new Date().getMonth() + 1;
+
+    if (mes < 9) {
+        mes = '0' + mes;
+    }else{
+        mes = '' + mes;
+    }
+
+
+
+    $scope.dato = { select_year: '' + (new Date().getFullYear()), select_month: mes }
+
+    $scope.traerdatos=function(dato){
+        cuadro = dato.select_year + '/' + dato.select_month; 
+        
+        consulta = ' SELECT *, rowid FROM asistencias WHERE usuarios_id=? and eliminado = "0" and  cita like "' + cuadro + '%" '
+        ConexionServ.query(consulta, [usu_id]).then(function(asis){
+			$scope.asis=usu
+			console.log(asis)        
+    })
+}
+
+
+$scope.Usuasistencias = function(usuario){
+	$state.go('asisusuarios', {usu_id: usuario.rowid})
+}
 	
 $scope.Swal = function(){
 	Swal.fire({
@@ -56,13 +89,15 @@ $scope.Swal = function(){
 
 	
 	$scope.insertarasistencia = function(usu){
+		console.log("aqui")
 		
-		consulta = "INSERT INTO asistencias('cita', 'usuarios_id') VALUES(?,?)"
 		
-		
+		$scope.cita= new Date()
+		console.log($scope.cita)
+		cita=window.fixDate($scope.cita)
 
-			$scope.cita= new Date();
-		ConexionServ.query(consulta, [$scope.cita, usu.rowid ]).then(function(result){
+		consulta = "INSERT INTO asistencias('cita', 'usuarios_id') VALUES(?,?)"
+		ConexionServ.query(consulta, [cita, usu.rowid ]).then(function(result){
 			$scope.traerusuarios();
 			
 			console.log('asistencias insertado')
@@ -74,11 +109,12 @@ $scope.Swal = function(){
 	
 
 	$scope.traerusuarios=function(){
-		ConexionServ.query('SELECT *, rowid FROM usuarios').then(function(usuarios){
+		ConexionServ.query('SELECT *,rowid FROM usuarios WHERE activo==1 and eliminado==0').then(function(usuarios){
 			for (let i = 0; i < usuarios.length; i++) {
 				const usu = usuarios[i];
 				console.log('holas')
-				consulta = 'SELECT *, rowid  FROM asistencias WHERE usuarios_id=?'
+				cuadro = $scope.dato.select_year + '/' + $scope.dato.select_month; 
+				consulta = 'SELECT *,rowid FROM asistencias WHERE usuarios_id=? and eliminado = "0" and cita like "' + cuadro + '%" ' 
 				ConexionServ.query(consulta, [usuarios[i].rowid]).then(function(asistencias){
 					usuarios[i].asistencias=asistencias;
 					console.log('siii')
@@ -156,16 +192,30 @@ $scope.editarAsistencia = function (asis) {
 
 .controller('EditarAsistenciaCtrl', function (ConexionServ,$scope, $uibModalInstance, asis) {
 	$scope.asis = asis;
+
+	console.log(asis);
+
+	$scope.dato = {};
+
+	$scope.dateOptions = {
+		formatYear: 'yy',
+		maxDate: new Date(2025, 12, 31),
+		minDate: new Date(2019, 01, 01)
+	};
+
+
+	$scope.open1 = function () {
+		$scope.dato.opened = !$scope.dato.opened;
+	}
 	
-
-
+	
 	$scope.eliminarasistencias = function(usu){
 		consulta = 'DELETE FROM asistencias WHERE rowid=?'
 		ConexionServ.query(consulta, [usu.rowid]).then(function(result){
 			
 			$scope.usu = result;
 			$scope.traerusuarios();
-		console.log('si elimino')
+			console.log('si elimino')
 	
 		}, function(tx){
 			console.log('asistencias no se pudo eliminar', tx)
@@ -179,7 +229,12 @@ $scope.editarAsistencia = function (asis) {
 
 	$scope.ok = function (asis) {
 		consulta = 'UPDATE asistencias SET cita=? WHERE rowid=?'
-		ConexionServ.query(consulta, [asis.cita, asis.rowid]).then(function(result){
+
+		cita = asis.cita.replace('-', '/');
+		// toca repetirlo quién sabe por qué.
+		cita = asis.cita.replace('-', '/');
+
+		ConexionServ.query(consulta, [cita, asis.rowid]).then(function(result){
 			console.log('asistencias actualizado ', result);
 		}, function(tx){
 			console.log('asistencias no se pudo actualizar', tx);
@@ -192,3 +247,4 @@ $scope.editarAsistencia = function (asis) {
 	  $uibModalInstance.dismiss('cancel');
 	};
 });
+

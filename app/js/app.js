@@ -16,6 +16,13 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 		templateUrl: 'templates/login.html'
 	})
 
+	.state('asisusuarios', {
+		url: '/asistenciasUsuarios/:usu_id',
+		controller: 'AsisusuariosCtrl',
+		templateUrl: 'templates/Usuasistencias.html',
+
+		
+	})
 	.state('usuarios', {
 		url: '/usuarios',
 		controller: 'UsuariosCtrl',
@@ -38,6 +45,12 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 		url: '/formulario',
 		controller: 'formularioCtrl',
 		templateUrl: 'templates/form-elements.html'
+	})
+
+	.state('inventario', {
+		url: '/inventario',
+		controller: 'inventarioCtrl',
+		templateUrl: 'templates/inventario.html'
 	})
 
 	.state('perfil', {

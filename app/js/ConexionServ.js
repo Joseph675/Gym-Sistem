@@ -25,10 +25,17 @@ angular.module('todo')
 
      sqlasistencias = "CREATE TABLE IF NOT EXISTS asistencias (id integer," +
                 "cita varchar(100)  DEFAULT NULL collate nocase, " +
-                "usuarios_id integer  NOT NULL)" ;
+                "usuarios_id integer  NOT NULL ," +
+                "modificado integer DEFAULT '0' NOT NULL ," +
+                "eliminado integer DEFAULT '0' NOT NULL) " ;
 
-     sqltareas = "CREATE TABLE IF NOT EXISTS tareas (id integer," +
-                "tarea varchar(100)  DEFAULT NULL collate nocase)" ;
+     sqlinventario = "CREATE TABLE IF NOT EXISTS inventario (id integer," +
+                "nombre varchar(100)  NOT NULL collate nocase," +
+                "descripcion varchar(100)  NOT NULL collate nocase," +
+                "codigo_producto varchar(100)  DEFAULT NULL collate nocase)" +
+                "estado varchar(100)  DEFAULT NULL collate nocase)" +
+                "precio varchar(100)  DEFAULT NULL collate nocase)" +
+                "cantidad varchar(100)  DEFAULT NULL collate nocase)" ;
 
    
 
@@ -51,8 +58,8 @@ angular.module('todo')
               console.log('asistencias Tabla creada');
             })
 
-            prom = this.query(sqltareas).then(function(){
-              console.log('tarea Tabla creada');
+            prom = this.query(sqlinventario).then(function(){
+              console.log('inventarios Tabla creada');
             })
             promesas.push(prom);
 
