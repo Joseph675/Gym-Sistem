@@ -176,7 +176,7 @@
     <section class="content">
         <div class="content__inner">
                 <header class="content__title">
-                        <h1>Formulario</h1>
+                        <h1>Agregar producto</h1>
     
                             <div class="actions">
                                 <a hclass="actions__item zmdi zmdi-trending-up"></a>
@@ -202,9 +202,9 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group"  class="wrap-input2 validate-input" >
-                                                    <label>Nombre</label>
+                                                    <label>Producto</label>
 
-                                                    <input id="nombres" type="text" class="form-control  " placeholder="Nombre" ng-model="nombre" >
+                                                    <input id="nombres" type="text" class="form-control  " placeholder="Producto" ng-model="nombre" >
 
                                                     <i class="form-group__bar"></i>
                                                 </div>
@@ -213,19 +213,22 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group"  class="wrap-input2 validate-input" >
                                                     <label>Descripcion</label>
-                                                    <input id="apellido" type="text" class="form-control " placeholder="Descripcion" ng-model="descripcion">
+                                                    <input  type="text" class="form-control " placeholder="Descripcion" ng-model="descripcion">
                                                     <i class="form-group__bar"></i>
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-6"  class="wrap-input2 validate-input" >
-                                                    <div class="form-group">
+                                            <div class="col-sm-6">
+                                                    <div class="form-group"  class="wrap-input2 validate-input" >
                                                         <label>Precio</label>
-                                                        <input id="email" type="text" class="form-control " ng-model="email" placeholder="precio">
+                                                       
+
+                                                        <input  type="number" class="form-control " placeholder="Precio" ng-model="precio">
                                                         <i class="form-group__bar"></i>
                                                     </div>
-                                             </div>
-                                             
+                                                </div>
+
+                                             <br>
                                              <div class="col-sm-6">
                                                 
                                                 <div class="row">
@@ -247,7 +250,7 @@
                                                        
                                               </div>
 
-                                                    
+                                              
                                                 
                                                     
                                              </div>
@@ -258,35 +261,30 @@
                                                     <div class="form-group">
                                                         <label>Cantidad</label>
                                                         
-                                                        <input id="celular" type="number" class="form-control input-mask" data-mask="0000000000" placeholder="000-000-0000"   ng-model="cantidad" >
+                                                        <input id="celular" type="number" class="form-control input-mask" data-mask="0000000000" placeholder="0000000000"   ng-model="cantidad" >
+                                                        <i class="form-group__bar"></i>
+                                                    </div>
+                                             </div>
+
+                                             <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Codigo del producto</label>
+                                                        
+                                                        <input id="codigo" type="text" class="form-control input-mask" data-mask="0000000000" placeholder="0000000000"   ng-model="codigo_producto" >
                                                         <i class="form-group__bar"></i>
                                                     </div>
                                              </div>
                                             
                                         </div>
                                         
-                                     
-
                                     
-                                           
-                                     <!--   <div class="col-sm-6">
-                                                    <div class="form-group">
-                                                            <label>Tipo de Usuario</label>
-                                                            <br>
-                                                            <select class="select2" data-minimum-results-for-search="Infinity" ng-model="modificado">
-                                                                <option >Admin </option>
-                                                                <option >Usuario</option>
-                                                            </select>
-                                                    </div>
-                                            </div>
-                                        --> 
                                             
+                                        <button    class="btn btn-theme btn-block" id="sa-info">Agregar producto</button>
                                     
                                     
                             </div>
                                
     
-                                    <button    class="btn btn-theme btn-block" id="sa-info">Ingresar usuario</button>
                                                     
                              
                             

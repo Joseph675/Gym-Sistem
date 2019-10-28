@@ -96,7 +96,7 @@ $scope.Swal = function(){
 		console.log($scope.cita)
 		cita=window.fixDate($scope.cita)
 
-		consulta = "INSERT INTO asistencias('cita', 'usuarios_id') VALUES(?,?)"
+		consulta = "INSERT INTO asistencias('cita', 'usuario_id') VALUES(?,?)"
 		ConexionServ.query(consulta, [cita, usu.rowid ]).then(function(result){
 			$scope.traerusuarios();
 			
@@ -114,7 +114,7 @@ $scope.Swal = function(){
 				const usu = usuarios[i];
 				console.log('holas')
 				cuadro = $scope.dato.select_year + '/' + $scope.dato.select_month; 
-				consulta = 'SELECT *,rowid FROM asistencias WHERE usuarios_id=? and eliminado = "0" and cita like "' + cuadro + '%" ' 
+				consulta = 'SELECT *,rowid FROM asistencias WHERE usuario_id=? and eliminado = "0" and cita like "' + cuadro + '%" ' 
 				ConexionServ.query(consulta, [usuarios[i].rowid]).then(function(asistencias){
 					usuarios[i].asistencias=asistencias;
 					console.log('siii')

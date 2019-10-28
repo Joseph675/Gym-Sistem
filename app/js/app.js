@@ -53,6 +53,12 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 		templateUrl: 'templates/inventario.html'
 	})
 
+	.state('productos', {
+		url: '/productos',
+		controller: 'productosCtrl',
+		templateUrl: 'templates/productos.html'
+	})
+
 	.state('perfil', {
 		url: '/perfil',
 		controller: 'PanelCtrl',

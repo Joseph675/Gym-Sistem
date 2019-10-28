@@ -16,37 +16,6 @@ angular.module('todo')
 
 	
 	
-
-	$scope.insertarusuarios = function(username, password){
-
-		ConexionServ.query('SELECT *, rowid FROM usuarios WHERE username=? and password=?', [username, password]).then(function(result){
-			console.log(result)
-			if(result.length > 0){
-				toastr.warning('No se pudo insertar')
-
-			}else{
-				
-				consulta = "INSERT INTO usuarios('nombres', 'apellidos', 'email', 'sexo', 'fecha', 'celular', 'activo', 'imagen_id', 'username', 'password') VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-				ConexionServ.query(consulta, [$scope.nombres, $scope.apellidos, $scope.email, $scope.sexo, $scope.fecha, $scope.celular, $scope.activo, $scope.imagen_id, $scope.username, $scope.password]
-				
-					
-					).then(function(){
-				
-				toastr.success('Usuario insertado')
-				console.log('USUARIO insertado')
-
-			}, function(tx){
-				toastr.info('usuario no se pudo insertar')
-				console.log('usuarios no se pudo insertar', tx)
-			});
-				}
-				
-				
-		})
-	
-		
-			
-	}
 	
 
 	$scope.mostrarusuarios = function Login(username, password){

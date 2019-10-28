@@ -10,19 +10,20 @@ angular.module('todo')
 
 $scope.insertarproducto = function(codigo_producto){
 
-	var correo = document.getElementById("codigo_producto");
+	var codigo = document.getElementById("codigo");
 
-	ConexionServ.query('SELECT *, rowid FROM inventario WHEREcodigo_producto', [codigo_producto]).then(function(result){
+
+	ConexionServ.query('SELECT *, rowid FROM inventario WHERE codigo_producto=?', [codigo_producto]).then(function(result){
 		console.log(result)
 			if(result.length > 0){
 				
 				toastr.info('Producto Existente')
 		}else{
-			if  (correo.value =="" ) {
+			if  (codigo.value =="" ) {
 				toastr.warning('Completa todos los campos')
 			} else {
-				consulta = "INSERT INTO inventario('nombre', 'descripcion', 'codigo_producto', 'estado', 'precio', 'cantidad') VALUES( ?, ?, ?, ?, ?, ?)"
-				ConexionServ.query(consulta, [$scope.nombre, $scope.descripcion, $scope.codigo_producto, $scope.estado, $scope.precio, $scope.cantidad]
+				consulta = "INSERT INTO inventario('nombre', 'descripcion', 'estado', 'precio', 'cantidad', 'codigo_producto') VALUES( ?, ?, ?, ?, ?, ?)"
+				ConexionServ.query(consulta, [$scope.nombre, $scope.descripcion, $scope.estado, $scope.precio, $scope.cantidad, $scope.codigo_producto]
 			
 				
 				).then(function(){

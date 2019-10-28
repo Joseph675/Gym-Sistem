@@ -3,9 +3,6 @@ angular.module('todo')
 .controller('tablaCtrl', function($scope, ConexionServ, $uibModal){
 	ConexionServ.createTables();
 
-	$scope.mostrarTablaInsertar=true;
-	$scope.editar = false ;	
-	$scope.modificando = false ;	
 
 	$scope.editarusuarios = function(usuario){
 		$scope.mostrarTablaInsertar=false;

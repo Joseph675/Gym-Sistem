@@ -19,17 +19,17 @@ angular.module('todo')
 
 
 
-$scope.insertarusuarios = function(username, password){
+$scope.insertarusuarios = function(username){
 
-	var correo = document.getElementById("username");
+	var usuario = document.getElementById("usuario");
 
-	ConexionServ.query('SELECT *, rowid FROM usuarios WHERE username=? and password=?', [username, password]).then(function(result){
+	ConexionServ.query('SELECT *, rowid FROM usuarios WHERE username=? ', [username]).then(function(result){
 		console.log(result)
 			if(result.length > 0){
 				
 				toastr.info('Usuario existente')
 		}else{
-			if  (correo.value =="" ) {
+			if ( usuario.value =="" ) {
 				toastr.warning('Completa todos los campos')
 			} else {
 				consulta = "INSERT INTO usuarios('nombres', 'apellidos', 'email', 'sexo', 'fecha', 'celular',  'imagen_id', 'username', 'password') VALUES( ?, ?, ?, ?, ?, ?, ?, ?,?)"
@@ -44,8 +44,8 @@ $scope.insertarusuarios = function(username, password){
 			toastr.info('usuario no se pudo insertar')
 			console.log('usuarios no se pudo insertar', tx)
 		});
-			}
 			
+	}
 			}
 	})
 
