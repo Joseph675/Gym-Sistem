@@ -6,8 +6,8 @@ angular.module('todo')
 	ConexionServ.query('SELECT *, rowid FROM usuarios WHERE username="admin" and password="123" ').then(function(result){
 		if(result.length == 0){
 			
-			consulta = "INSERT INTO usuarios(nombres, apellidos, email, sexo, celular, activo, username, password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)"
-			ConexionServ.query(consulta, ['Joseth', 'Guerrero', 'davidguerrero777@gmail.com', 'M', 3203602610, 1, 'admin', '123']).then(function(){
+			consulta = "INSERT INTO usuarios(nombres, apellidos, email, sexo, celular, activo,  imagen_id, username, password) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)"
+			ConexionServ.query(consulta, ['Joseth', 'Guerrero', 'davidguerrero777@gmail.com', 'M', 3203602610, 1, 1, 'admin', '123']).then(function(){
 				console.log('Admin creado');
 			});
 		}
@@ -35,9 +35,7 @@ angular.module('todo')
 			console.log(result)
 				if(result.length > 0){
 					$state.go("panel");
-					toastr.info('Bienvenido ' + username)
 			}else{
-					toastr.warning('Usuario incorrecto')
 				}
 		})
 			

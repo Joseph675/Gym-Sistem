@@ -26,7 +26,7 @@ angular.module('todo')
     $scope.traerdatos=function(dato){
         cuadro = dato.select_year + '/' + dato.select_month; 
         
-        consulta = ' SELECT *, rowid FROM asistencias WHERE usuarios_id=? and eliminado = "0" and  cita like "' + cuadro + '%" '
+        consulta = ' SELECT *, rowid FROM asistencias WHERE usuario_id=? and eliminado = "0" and  cita like "' + cuadro + '%" '
         ConexionServ.query(consulta, [usu_id]).then(function(asis){
 			$scope.asis=usu
 			console.log(asis)        
@@ -87,6 +87,7 @@ $scope.Swal = function(){
 	}
 
 
+	
 	
 	$scope.insertarasistencia = function(usu){
 		console.log("aqui")

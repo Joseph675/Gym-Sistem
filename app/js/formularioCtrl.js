@@ -38,7 +38,6 @@ $scope.insertarusuarios = function(username){
 				
 				).then(function(){
 			
-			toastr.success('Usuario insertado')
 			console.log('USUARIO insertado')
 		}, function(tx){
 			toastr.info('usuario no se pudo insertar')
