@@ -24,7 +24,7 @@ angular.module('todo')
     $scope.traerDatos=function(){
         cuadro = $scope.dato.select_year + '/' + $scope.dato.select_month; 
         console.log(cuadro)
-        consulta = 'SELECT *,rowid FROM asistencias WHERE usuarios_id=? and eliminado = "0" and cita like "' + cuadro + '%" ' 
+        consulta = 'SELECT *,rowid FROM asistencias WHERE usuario_id=? and eliminado = "0" and cita like "' + cuadro + '%" ' 
         ConexionServ.query(consulta, [usu_id]).then(function(asis){
             console.log(asis)
             $scope.usu.asistencias = asis;
@@ -45,7 +45,7 @@ angular.module('todo')
     
                 $scope.usu=usuarios[0]
 
-                consulta = 'SELECT *, rowid  FROM asistencias WHERE usuarios_id=?'
+                consulta = 'SELECT *, rowid  FROM asistencias WHERE usuario_id=?'
                 ConexionServ.query(consulta, [$state.params.usu_id]).then(function(asistencias){
                     for (let l = 0; l < asistencias.length; l++) {
                         asistencias[l].cita = new Date(asistencias[l].cita) ;

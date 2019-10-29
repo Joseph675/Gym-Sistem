@@ -84,12 +84,6 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 		
 	})
 	
-	.state('meses2', {
-		url: '/meses2',
-		controller: 'MesesCtrl2',
-		templateUrl: 'templates/meses2.html'
-		
-	})
 
 	.state('asistencias', {
 		url: '/asistencias',
