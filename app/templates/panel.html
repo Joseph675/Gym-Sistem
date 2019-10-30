@@ -1,7 +1,7 @@
 
 
         <header class="header">
-                <div class="navigation-trigger d-xl-none" data-sa-action="aside-open" data-sa-target=".sidebar">
+                <div class="navigation-trigger d-xl-none" ng-click="mostrarMenu()"  ng-class="{'toggled': aside_toggled}" data-sa-action="aside-open" data-sa-target=".sidebar">
                     <i class="zwicon-hamburger-menu"></i>
                 </div>
     
@@ -116,14 +116,15 @@
                 </div>
             </header>
 
-        <aside class="sidebar ">
+        <aside class="sidebar" ng-class="{'toggled': aside_toggled}">
             <div class="scrollbar">
                 <div class="user">
-                    <div class="user__info" data-toggle="dropdown">
-                        <img class="user__img" src="demo/img/profile-pics/8.jpg" alt="">
+                    <div class="user__info" ng-click="ocultarMenu()" data-toggle="dropdown">
+                        <img class="user__img" ng-show="USER.sexo == 'F'" src="demo/img/profile-pics/8.jpg" alt="">
+                        <img class="user__img" ng-show="USER.sexo == 'M'" src="demo/img/profile-pics/2.jpg" alt="">
                         <div>
-                                <div class="user__name">Mariana,Valentina y Kevin</div>
-                                <div class="user__email">marianavalentinakevin@gmail.com</div>
+                                <div class="user__name">{{::USER.nombres}} {{::USER.apellidos}}</div>
+                                <div class="user__email">{{::USER.email}}</div>
                         </div>
                     </div>
 
@@ -132,25 +133,28 @@
                         <a class="dropdown-item" >Settings</a>
                         <a ui-sref="login" class="dropdown-item" >Salir</a>
                     </div>
+
                 </div>
 
                 <ul class="navigation">
                     <li class="navigation__active"><a ui-sref="panel"><i class="zwicon-home"></i> Home</a></li>
     
-                    <li ><a ui-sref="asistencias"><i class="zwicon-smile"></i> Asistencias</a></li>
+                    <li ><a ui-sref="panel.asistencias"><i class="zwicon-smile"></i> Asistencias</a></li>
         
-                    <li ><a ui-sref="table"><i i class="zwicon-layout-2"></i> Usuarios</a></li>
+                    <li ><a ui-sref="panel.table"><i i class="zwicon-layout-2"></i> Usuarios</a></li>
         
-                    <li><a ui-sref="form"><i i class="zwicon-user-plus"></i> Formulario</a></li>
+                    <li><a ui-sref="panel.form"><i i class="zwicon-user-plus"></i> Formulario</a></li>
     
-                    <li  ><a ui-sref="productos"><i i class="zwicon-shopping-cart"></i> Productos</a></li>
+                    <li  ><a ui-sref="panel.productos"><i i class="zwicon-shopping-cart"></i> Productos</a></li>
         
-                    <li ><a ui-sref="inventario"><i i class="zwicon-plus-circle"></i> Agregar producto</a></li>
+                    <li ><a ui-sref="panel.inventario"><i i class="zwicon-plus-circle"></i> Agregar producto</a></li>
         
-                    <li ><a ui-sref="sincronizacion"><i i class="zwicon-cloud"></i> Sincronizacion</a></li>
+                    <li ><a ui-sref="panel.sincronizacion"><i i class="zwicon-cloud"></i> Sincronizacion</a></li>
         
     
                     <li ><a ui-sref="login"><i i class="zwicon-back"></i> Salir</a></li>
+                    
+                    <li ng-show="aside_toggled" ><a ng-click="ocultarMenu()"><i i class="zwicon-back"></i> Ocultar</a></li>
     
             </ul>
             </div>
@@ -179,53 +183,15 @@
         </div>
 
         <section class="content">
+        <ui-view>
                 <header class="content__title">
                         <h1>Gimnasio</h1>
                         <small>Bienvenidos!</small>
                     </header>
-                    <div class="card todo">
-                        <div class="card-body">
-                            <h4 class="card-title">Lista de tareas</h4>
-                        </div>
+                    
+        </ui-view>
 
-                        <div class="listview">
-                            <div class="listview__item" >
-                                
-
-                                <div class="actions listview__actions">
-                                    <div class="dropdown actions__item">
-                                        <i class="zwicon-more-h" data-toggle="dropdown"></i>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="">Mark as completed</a>
-                                            <a class="dropdown-item" href="">Delete</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="btn-group" uib-dropdown is-open="status.isopen">
-                                <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-                                  Button dropdown <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                                  <li role="menuitem"><a href="#">Action</a></li>
-                                  <li role="menuitem"><a href="#">Another action</a></li>
-                                  <li role="menuitem"><a href="#">Something else here</a></li>
-                                  <li class="divider"></li>
-                                  <li role="menuitem"><a href="#">Separated link</a></li>
-                                </ul>
-                              </div>
-                              <div class="btn-group" uib-dropdown is-open="status.isopen">
-                                <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-                                  Button dropdown <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                                  <li role="menuitem"><a href="#">Action</a></li>
-                                  <li role="menuitem"><a href="#">Another action</a></li>
-                                  <li role="menuitem"><a href="#">Something else here</a></li>
-                                  <li class="divider"></li>
-                                  <li role="menuitem"><a href="#">Separated link</a></li>
-                                </ul>
-                              </div>
+               
                           
                            
         </section>

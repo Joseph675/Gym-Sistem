@@ -1,13 +1,29 @@
 angular.module('todo')
 
+.controller('PrincipalCtrl', function($scope, ConexionServ, $log){
+	$scope.aside_toggled = false;
+})
+
 .controller('PanelCtrl', function($scope, ConexionServ, $log){
 	ConexionServ.createTables();
+
+	$scope.USER = JSON.parse(localStorage.USER);
 
 	$scope.items = [
 		'The first choice!',
 		'And another choice for you.',
 		'but wait! A third!'
 	  ];
+
+	  $scope.mostrarMenu = function(){
+		$scope.aside_toggled = true;
+	  }
+	
+	  $scope.ocultarMenu = function(){
+		$scope.aside_toggled = false;
+	  }
+
+	  // Traemos 
 	
 	  $scope.status = {
 		isopen: false
@@ -33,32 +49,6 @@ angular.module('todo')
 	
 
 
-	$scope.insertartareas = function(){
-		
-		consulta = "INSERT INTO tareas('tarea') VALUES(?)"
-		
-		ConexionServ.query(consulta, [$scope.tarea]).then(function(result){
-			
-			console.log('tarea insertado')
-		}, function(tx){
-			console.log('tarea no se pudo insertar', tx)
-		});
-	}
-
-	
-
-	$scope.traertareas=function(){
-		consulta = "SELECT *, rowid FROM tareas "
-		ConexionServ.query(consulta, []).then(function(result){
-			
-			$scope.usuarios = result;
-			console.log('tarea mostrado')
-	
-		}, function(tx){
-			console.log('tarea no mostrado', tx)
-		});
-	}
-	$scope.traertareas();
 	
 
 

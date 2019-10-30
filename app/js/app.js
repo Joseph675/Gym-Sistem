@@ -16,26 +16,26 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 		templateUrl: 'templates/login.html'
 	})
 
-	.state('asisusuarios', {
+	.state('panel.asisusuarios', {
 		url: '/asistenciasUsuarios/:usu_id',
 		controller: 'AsisusuariosCtrl',
 		templateUrl: 'templates/Usuasistencias.html',
 
 		
 	})
-	.state('usuarios', {
+	.state('panel.usuarios', {
 		url: '/usuarios',
 		controller: 'UsuariosCtrl',
 		templateUrl: 'templates/Usuarios.html'
 	})
 
-	.state('calendar', {
+	.state('panel.calendar', {
 		url: '/calendar',
 		controller: 'CalendarCtrl',
 		templateUrl: 'templates/calendar.html'
 	})
 
-	.state('table', {
+	.state('panel.table', {
 		url: '/table',
 		controller: 'tablaCtrl',
 		templateUrl: 'templates/data-table.html'
@@ -47,19 +47,19 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 		templateUrl: 'templates/form-elements.html'
 	})
 
-	.state('inventario', {
+	.state('panel.inventario', {
 		url: '/inventario',
 		controller: 'inventarioCtrl',
 		templateUrl: 'templates/inventario.html'
 	})
 
-	.state('productos', {
+	.state('panel.productos', {
 		url: '/productos',
 		controller: 'productosCtrl',
 		templateUrl: 'templates/productos.html'
 	})
 
-	.state('perfil', {
+	.state('panel.perfil', {
 		url: '/perfil',
 		controller: 'PanelCtrl',
 		templateUrl: 'templates/profile-about.html'
@@ -71,13 +71,13 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 		templateUrl: 'templates/404.html'
 	})
 
-	.state('yolo', {
+	.state('panel.yolo', {
 		url: '/yolo',
 		controller: 'tablaCtrl',
 		templateUrl: 'templates/yolo.html'
 	})
 
-	.state('sincronizacion', {
+	.state('panel.sincronizacion', {
 		url: '/sincronizacion',
 		controller: 'SincronizacionCtrl',
 		templateUrl: 'templates/Sincronizacion.html'
@@ -85,7 +85,7 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 	})
 	
 
-	.state('asistencias', {
+	.state('panel.asistencias', {
 		url: '/asistencias',
 		controller: 'UsuariosCtrl',
 		templateUrl: 'templates/asistencias.html'

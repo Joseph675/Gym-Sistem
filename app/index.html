@@ -61,16 +61,16 @@
         
     </head>
 
-    <body  data-sa-theme="1">
-       
-            <ui-view></ui-view>
+    <body ng-class="{'aside-toggled': aside_toggled}" ng-controller="PrincipalCtrl" data-sa-theme="1">
+        
+        <ui-view></ui-view>
 
         
  
         <!-- Javascript -->
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/OverlayScrollbars1.9.1.min.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <!--<script src="js/jquery.overlayScrollbars.js"></script>-->
       
         <script src="js/popper.min.js"></script>
         <!--<script src="js/bootstrap.min.js"></script>
@@ -118,6 +118,7 @@
         <script type="text/javascript" src="js/bootstrap.js"></script>
 -->
 
+        <script  src="js/toastr.min.js"></script>
 
         
 
