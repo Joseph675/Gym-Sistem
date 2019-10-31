@@ -41,7 +41,7 @@ angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
 		templateUrl: 'templates/data-table.html'
 	})
 
-	.state('form', {
+	.state('panel.form', {
 		url: '/formulario',
 		controller: 'formularioCtrl',
 		templateUrl: 'templates/form-elements.html'
