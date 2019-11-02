@@ -1,4 +1,4 @@
-angular.module('todo', ['ngAnimate', 'ngSanitize','ui.bootstrap','ui.router'])
+angular.module('todo', [ 'ngSanitize','ui.bootstrap','ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider){
 	

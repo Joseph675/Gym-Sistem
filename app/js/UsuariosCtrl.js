@@ -35,7 +35,7 @@ angular.module('todo')
 
 
 $scope.Usuasistencias = function(usuario){
-	$state.go('asisusuarios', {usu_id: usuario.rowid})
+	$state.go('panel.asisusuarios', {usu_id: usuario.rowid})
 }
 	
 $scope.Swal = function(){
