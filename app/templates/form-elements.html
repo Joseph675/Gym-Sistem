@@ -1,0 +1,161 @@
+       
+
+    <section class="content">
+        <div class="content__inner">
+                <header class="content__title">
+                        <h1>Formulario</h1>
+    
+                            <div class="actions">
+                                <a hclass="actions__item zmdi zmdi-trending-up"></a>
+                                <a hclass="actions__item zmdi zmdi-check-all"></a>
+    
+                                <div class="dropdown actions__item">
+                                    <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a  class="dropdown-item">Refresh</a>
+                                        <a  class="dropdown-item">Manage Widgets</a>
+                                        <a  class="dropdown-item">Settings</a>
+                                    </div>
+                                </div>
+                            </div>
+                 </header>
+
+                    <form  ng-submit="insertarusuarios(username)">
+                            <div class="card">
+                                    
+                                    <div class="card-body">
+                                        
+                                       
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group"  class="wrap-input2 validate-input" >
+                                                    <label>Nombre</label>
+
+                                                    <input id="nombres" type="text" class="form-control  " placeholder="Nombre" ng-model="nombres" >
+
+                                                    <i class="form-group__bar"></i>
+                                                </div>
+                                            </div>
+            
+                                            <div class="col-sm-6">
+                                                <div class="form-group"  class="wrap-input2 validate-input" >
+                                                    <label>Apellido</label>
+                                                    <input id="apellido" type="text" class="form-control " placeholder="Apellido" ng-model="apellidos">
+                                                    <i class="form-group__bar"></i>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-6"  class="wrap-input2 validate-input" >
+                                                    <div class="form-group">
+                                                        <label>Email</label>
+                                                        <input id="email" type="text" class="form-control " ng-model="email" placeholder="Email">
+                                                        <i class="form-group__bar"></i>
+                                                    </div>
+
+                                                 
+                                             </div>
+                                             
+                                             <div class="col-sm-6">
+                                                
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <label>Sexo</label>
+                    
+                                                            <select ng-model="sexo"  class="form-control" placeholder="Seleciona un sexo">
+                                                                <option style= "background-color: black; "></option>
+                                                                <option id="f" ng-model="sexo" style= "background-color: black; ">F</option>
+                                                                <option id="m" ng-model="sexo"  style= "background-color: black;">M</option>
+                                                               
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                       
+                                              </div>
+
+                                                    
+                                                
+                                                    
+                                             </div>
+                                             
+                                            
+                                             <div class="col-sm-6">
+                                                <label>Fecha</label>
+            
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text"><i class="zwicon-calendar-never"></i></span>
+                                                    </div>
+                                                    <input id="fecha" type="text" class="form-control date-picker" placeholder="Fecha" ng-model="fecha">
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label>Telefono</label>
+                                                        
+                                                        <input id="celular" type="number" class="form-control input-mask" data-mask="000-000-0000" placeholder="000-000-0000"   ng-model="celular" >
+                                                        <i class="form-group__bar"></i>
+                                                    </div>
+                                             </div>
+                                            
+                                        </div>
+                                        
+                                     
+
+                                        <div class="row">
+                                                
+                                                <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label>Usuario</label>
+                                                            
+                                                            <input id="usuario" type="text" class="form-control " placeholder="Usuario" ng-model="username">
+                                                            <i class="form-group__bar"></i>
+                                                        </div>
+                                                    </div> 
+
+                                            
+                                            <br>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Password </label>
+                                                    <input id="contraseña" type="password" class="form-control " placeholder="Password" ng-model="password">
+                                                    <i class="form-group__bar"></i>
+                                                </div>
+                                            </div>
+                                    
+                                           
+                                     <!--   <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                            <label>Tipo de Usuario</label>
+                                                            <br>
+                                                            <select class="select2" data-minimum-results-for-search="Infinity" ng-model="modificado">
+                                                                <option >Admin </option>
+                                                                <option >Usuario</option>
+                                                            </select>
+                                                    </div>
+                                            </div>
+                                        --> 
+                                            
+                                    
+                                    
+                            </div>
+                               
+    
+                                    <button    class="btn btn-theme btn-block" id="sa-info">Ingresar usuario</button>
+                                                    
+                             
+                            
+                    </form>
+
+                    
+
+                    
+
+                </section>   
+        <script src="resources/js/app.min.js"></script>
+        
+        
+
+        

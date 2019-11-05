@@ -1,0 +1,114 @@
+
+   
+                    
+          <section class="content">
+            <header class="content__title">
+                <h1>Asistencias</h1>
+
+                    <div class="actions">
+                        <a hclass="actions__item zmdi zmdi-trending-up"></a>
+                        <a hclass="actions__item zmdi zmdi-check-all"></a>
+
+                        <div class="dropdown actions__item">
+                            <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a  class="dropdown-item">Refresh</a>
+                                <a  class="dropdown-item">Manage Widgets</a>
+                                <a  class="dropdown-item">Settings</a>
+                            </div>
+                        </div>
+                    </div>
+         </header>
+              <div class="card d-print-none">
+                          
+                
+                <div class="card-body">
+                              
+        
+                                <div >
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                                <div class="col-sm-6">
+                                                        <div class="form-group">  
+                                                                <select class="form-control"  name="select_year" ng-model="dato.select_year">
+                                                                    <option style= "background-color: black; "></option>
+                                                                        <option  style= "background-color: black; " value="2019">2019</option>
+                                                                        <option  style= "background-color: black; " value="2020">2020</option>
+                                                                        <option  style= "background-color: black; " value="2021">2021</option>
+                                                                        <option  style= "background-color: black; " value="2022">2022</option>
+                                                                        <option  style= "background-color: black; " value="2023">2023</option>
+                                                                        <option  style= "background-color: black; " value="2024">2024</option>
+                                                                        <option  style= "background-color: black; " value="2025">2025</option>
+                                                                </select>
+                                                
+                                                                 <select class="form-control"  name="select_month" ng-model="dato.select_month">
+                                                                    <option style= "background-color: black; "></option>
+
+                                                                        <option   style= "background-color: black; " value="01">Enero</option>
+                                                                        <option  style= "background-color: black; "  value="02">Febrero</option>
+                                                                        <option  style= "background-color: black; " value="03">Marzo</option>
+                                                                        <option  style= "background-color: black; " value="04">Abril</option>
+                                                                        <option  style= "background-color: black; " value="05">Mayo</option>
+                                                                        <option  style= "background-color: black; " value="06">Junio</option>
+                                                                        <option  style= "background-color: black; " value="07">Julio</option>
+                                                                        <option  style= "background-color: black; " value="08">Agosto</option>
+                                                                        <option  style= "background-color: black; " value="09">Septiembre</option>
+                                                                        <option style= "background-color: black; "  value="10">Octubre</option>
+                                                                        <option  style= "background-color: black; " value="11">Noviembre</option>
+                                                                        <option  style= "background-color: black; " value="12">Diciembre</option>
+                                                                    </select>
+                                
+                                                                    <button  class="btn btn-theme btn--icon-text" ng-click="traerusuarios()">Buscar</button>
+                                
+                                                        </div>
+                                                    </div>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos  </th>
+                                            <th>Asistencia</th>
+                                           
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="usu in usuarios">
+                                            <th >#{{$index+1}}</th>
+                                            <td ng-click="Usuasistencias(usu)">{{usu.nombres}}</td>
+                                            <td >{{usu.apellidos}}</td>
+                                            
+                                            <td >
+                                                <div >
+                                            
+                                                <button  ng-click="editarAsistencia(asi)"  ng-repeat="asi in usu.asistencias" class="btn    btn-outline-theme-dark " ><i class="zwicon-calendar-day" ></i>{{asi.cita | date:"dd/MM/yyyy"}}</button>
+
+                                                 <button class=" btn btn-theme btn--icon btn-outline-theme d-print-none" ng-click="insertarasistencia(usu)" > 
+                                                    +
+                                                 </button> 
+                                                </div>
+                                               
+                                            </td>
+                                        </tr>
+                                        
+                                        
+                                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                </div>
+          </section>
+
+                    
+            
+           
+       
+          <!-- App functions and actions -->
+          <script src="resources/js/app.min.js"></script>
+  
